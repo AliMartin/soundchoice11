@@ -1,10 +1,13 @@
-.artist-hero__cta {
+.artist-hero__cta,
+.footer-contact {
   a {
+    color: $white;
     display: inline-flex;
     flex-direction: row;
     align-items: center;
     border: 1px solid $gold;
     &:hover {
+      color: $white;
       border: 1px solid $gold;
       background-color: $gold;
       i {

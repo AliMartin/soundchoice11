@@ -9,10 +9,10 @@
 /node_modules/
 
 # Ignore configuration files that may contain sensitive information
-# /sites/*/*settings*.php
-# /sites/*/*services*.yml
+/sites/*/*settings*.php
+/sites/*/*services*.yml
 
-# Ignore libraries
+# DON'T Ignore libraries
 # /libraries
 
 # Ignore paths that may contain user-generated content
@@ -27,6 +27,7 @@
 /sites/*/translations
 /sites/*/tmp
 /sites/*/cache
+/tmp
 
 # Ignore testing related files
 /sites/simpletest

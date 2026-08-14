@@ -12304,24 +12304,31 @@ a > .ck-content code {
 .ck-content code {
   overflow-y: auto;
 }
-.ck-content .artist-hero__cta a {
+.ck-content .artist-hero__cta a,
+.ck-content .footer-contact a {
+  color: #fff;
   display: inline-flex;
   flex-direction: row;
   align-items: center;
   border: 1px solid #C8A45D;
 }
-.ck-content .artist-hero__cta a:hover {
+.ck-content .artist-hero__cta a:hover,
+.ck-content .footer-contact a:hover {
+  color: #fff;
   border: 1px solid #C8A45D;
   background-color: #C8A45D;
 }
-.ck-content .artist-hero__cta a:hover i {
+.ck-content .artist-hero__cta a:hover i,
+.ck-content .footer-contact a:hover i {
   color: #fff;
 }
-.ck-content .artist-hero__cta i {
+.ck-content .artist-hero__cta i,
+.ck-content .footer-contact i {
   font-size: x-large;
   color: #C8A45D;
 }
-.ck-content .artist-hero__cta span {
+.ck-content .artist-hero__cta span,
+.ck-content .footer-contact span {
   text-transform: uppercase;
   margin: 0 15px;
   letter-spacing: 2px;
@@ -12338,6 +12345,115 @@ a > .ck-content code {
   width: 100%;
   height: 1px;
   background: linear-gradient(to right, rgba(200, 164, 93, 0) 0%, #C8A45D 35%, #C8A45D 65%, rgba(200, 164, 93, 0) 100%);
+}
+.ck-content header nav.navbar {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.ck-content #block-soundchoice11-branding .navbar-brand {
+  font-family: "Manrope", sans-serif;
+  text-transform: uppercase;
+}
+.ck-content #block-soundchoice11-branding .navbar-brand a {
+  text-decoration: none;
+  outline: none;
+}
+.ck-content #block-soundchoice11-branding .navbar-brand a:hover {
+  text-decoration: none;
+}
+.ck-content #block-soundchoice11-branding .navbar-brand .site-title {
+  font-weight: 200;
+  letter-spacing: 5px;
+}
+.ck-content #block-soundchoice11-branding .navbar-brand .site-title .site-title-sound {
+  color: #fff;
+}
+.ck-content #block-soundchoice11-branding .navbar-brand .site-title .site-title-choice {
+  color: #C8A45D;
+}
+.ck-content #block-soundchoice11-branding .navbar-brand .site-slogan {
+  font-size: x-small;
+  color: #fff;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.ck-content footer {
+  background-color: #000000;
+  color: #C5C9CD;
+  font-size: smaller;
+  padding: 4rem 0 6rem 0;
+}
+.ck-content footer nav h2, .ck-content footer nav .h2 {
+  font-size: large;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+.ck-content footer nav ul.navbar-nav a.nav-link, .ck-content footer nav ul.navbar-nav .media-library-view--widget .view-header a, .ck-content .media-library-view--widget .view-header footer nav ul.navbar-nav a {
+  color: #C5C9CD;
+  padding: 3px 0;
+  text-decoration: none;
+}
+.ck-content footer nav ul.navbar-nav a.nav-link:hover, .ck-content footer nav ul.navbar-nav .media-library-view--widget .view-header a:hover, .ck-content .media-library-view--widget .view-header footer nav ul.navbar-nav a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.ck-content .footer-logo {
+  margin-bottom: 15px;
+}
+.ck-content .footer-logo img {
+  width: 100%;
+  height: auto;
+}
+.ck-content .footer-slogan {
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+.ck-content .footer-social-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.ck-content .footer-social-links a {
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+}
+.ck-content .footer-social-links a:hover {
+  color: #C8A45D;
+  text-decoration: none;
+}
+.ck-content .footer-social-links .footer-social-link span {
+  display: none;
+}
+.ck-content .footer-copyright {
+  color: #C5C9CD;
+}
+.ck-content .footer-contact {
+  margin-bottom: 15px;
+}
+.ck-content .footer-telephone,
+.ck-content .footer-email {
+  padding: 3px 0;
+}
+.ck-content .footer-telephone i,
+.ck-content .footer-email i {
+  color: #C8A45D;
+  width: 30px;
+}
+.ck-content .footer-telephone a,
+.ck-content .footer-email a {
+  color: #C5C9CD;
+  text-decoration: none;
+}
+.ck-content .footer-telephone a:hover,
+.ck-content .footer-email a:hover {
+  color: #fff;
+  text-decoration: none;
 }
 .ck-content .artist-hero {
   position: relative;
@@ -12525,7 +12641,7 @@ a > .ck-content code {
   align-items: stretch;
 }
 .ck-content .artist__multimedia .artist-column {
-  padding: 30px;
+  padding: 60px 30px;
 }
 .ck-content .artist__multimedia .multimedia__video,
 .ck-content .artist__multimedia .multimedia__gallery {

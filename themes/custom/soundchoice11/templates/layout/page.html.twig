@@ -62,7 +62,11 @@ set footer_classes = ' ' ~
   {% if page.nav_branding or page.nav_main or page.nav_additional %}
   <nav class="{{ nav_classes }}">
     <div class="{{ b5_top_container }} d-flex">
-      {{ page.nav_branding }}
+
+      {% if page.nav_branding %}
+        {{ page.nav_branding }}
+      {% endif %}
+
 
       {% if page.nav_main or page.nav_additional %}
         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
@@ -121,10 +125,76 @@ set footer_classes = ' ' ~
 
 </main>
 
-{% if page.footer %}
-<footer role="contentinfo" class="mt-auto {{ footer_classes }}">
+<footer role="contentinfo" class="site-footer mt-auto {{ footer_classes }}">
   <div class="{{ b5_top_container }}">
-    {{ page.footer }}
+    <div class="row g-4 g-lg-5">
+
+      <div class="col-sm-12 col-md-6 col-lg-3 site-footer__column site-footer__column--brand">
+        <div class="footer-logo">
+          <img src="/themes/custom/soundchoice11/images/footer-logo.png">
+        </div>
+        <div class="footer-slogan">
+          {{ page.footer_1 }}
+        </div>
+        <div class="footer-social-links">
+          <div class="footer-social-link facebook">
+            <a href="https://facebook.com/soundchoiceuk" target="_blank">
+              <i class="fa-brands fa-facebook-f"></i><span>Facebook</span>
+            </a>
+          </div>
+          <div class="footer-social-link instagram">
+            <a href="https://instagram.com/soundchoiceuk" target="_blank"
+              ><i class="fa-brands fa-instagram"></i><span>Instagram</span>
+            </a>
+          </div>
+          <div class="footer-social-link x">
+            <a href="https://x.com/soundchoiceuk" target="_blank">
+              <i class="fa-brands fa-x-twitter"></i><span>X</span>
+            </a>
+          </div>
+          <div class="footer-social-link youtube">
+            <a href="https://youtube.com/@soundchoiceuk" target="_blank">
+              <i class="fa-brands fa-youtube"></i><span>YouTube</span>
+            </a>
+          </div>
+        </div>
+        <div class="footer-copyright">Copyright {{ "now"|date("Y") }} Hyperluminal Limited</div>
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-lg-2 site-footer__column site-footer__column--explore">
+        {{ page.footer_2 }}
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-lg-2 site-footer__column site-footer__column--information">
+        {{ page.footer_3 }}
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-lg-2 site-footer__column site-footer__column--legal">
+        {{ page.footer_4 }}
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-lg-3 site-footer__column site-footer__column--contact">
+        {{ page.footer_5 }}
+
+        <div class="footer-contact">
+          <a href="#" class="btn">
+            <span>Get in touch</span>
+            <i class="fa-light fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="footer-telephone">
+          <i class="fa-sharp fa-solid fa-phone"></i>
+          <a href="tel:+447528686583">07528 686583</a>
+        </div>
+
+        <div class="footer-email">
+          <i class="fa-sharp fa-solid fa-envelope"></i>
+          <a href="mailto:hello@soundchoice.co.uk">hello@soundchoice.co.uk</a>
+        </div>
+
+      </div>
+
+    </div>
   </div>
 </footer>
-{% endif %}

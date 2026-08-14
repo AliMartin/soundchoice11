@@ -18,7 +18,11 @@ regions:
   content: 'Main content'
   sidebar_first: 'Sidebar first'
   sidebar_second: 'Sidebar second'
-  footer: Footer
+  footer_1: 'Footer column 1'
+  footer_2: 'Footer column 2'
+  footer_3: 'Footer column 3'
+  footer_4: 'Footer column 4'
+  footer_5: 'Footer column 5'
 libraries-override:
   bootstrap5/global-styling: false
   bootstrap5/ckeditor5-stylesheets: false

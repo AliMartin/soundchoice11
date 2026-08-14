@@ -13104,24 +13104,31 @@ code {
   overflow-y: auto;
 }
 
-.artist-hero__cta a {
+.artist-hero__cta a,
+.footer-contact a {
+  color: #fff;
   display: inline-flex;
   flex-direction: row;
   align-items: center;
   border: 1px solid #C8A45D;
 }
-.artist-hero__cta a:hover {
+.artist-hero__cta a:hover,
+.footer-contact a:hover {
+  color: #fff;
   border: 1px solid #C8A45D;
   background-color: #C8A45D;
 }
-.artist-hero__cta a:hover i {
+.artist-hero__cta a:hover i,
+.footer-contact a:hover i {
   color: #fff;
 }
-.artist-hero__cta i {
+.artist-hero__cta i,
+.footer-contact i {
   font-size: x-large;
   color: #C8A45D;
 }
-.artist-hero__cta span {
+.artist-hero__cta span,
+.footer-contact span {
   text-transform: uppercase;
   margin: 0 15px;
   letter-spacing: 2px;
@@ -13139,6 +13146,123 @@ header::after {
   width: 100%;
   height: 1px;
   background: linear-gradient(to right, rgba(200, 164, 93, 0) 0%, #C8A45D 35%, #C8A45D 65%, rgba(200, 164, 93, 0) 100%);
+}
+header nav.navbar {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#block-soundchoice11-branding .navbar-brand {
+  font-family: "Manrope", sans-serif;
+  text-transform: uppercase;
+}
+#block-soundchoice11-branding .navbar-brand a {
+  text-decoration: none;
+  outline: none;
+}
+#block-soundchoice11-branding .navbar-brand a:hover {
+  text-decoration: none;
+}
+#block-soundchoice11-branding .navbar-brand .site-title {
+  font-weight: 200;
+  letter-spacing: 5px;
+}
+#block-soundchoice11-branding .navbar-brand .site-title .site-title-sound {
+  color: #fff;
+}
+#block-soundchoice11-branding .navbar-brand .site-title .site-title-choice {
+  color: #C8A45D;
+}
+#block-soundchoice11-branding .navbar-brand .site-slogan {
+  font-size: x-small;
+  color: #fff;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+footer {
+  background-color: #000000;
+  color: #C5C9CD;
+  font-size: smaller;
+  padding: 4rem 0 6rem 0;
+}
+footer nav h2, footer nav .h2 {
+  font-size: large;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+footer nav ul.navbar-nav a.nav-link, footer nav ul.navbar-nav .media-library-view--widget .view-header a, .media-library-view--widget .view-header footer nav ul.navbar-nav a {
+  color: #C5C9CD;
+  padding: 3px 0;
+  text-decoration: none;
+}
+footer nav ul.navbar-nav a.nav-link:hover, footer nav ul.navbar-nav .media-library-view--widget .view-header a:hover, .media-library-view--widget .view-header footer nav ul.navbar-nav a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-logo {
+  margin-bottom: 15px;
+}
+.footer-logo img {
+  width: 100%;
+  height: auto;
+}
+
+.footer-slogan {
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.footer-social-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.footer-social-links a {
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+}
+.footer-social-links a:hover {
+  color: #C8A45D;
+  text-decoration: none;
+}
+.footer-social-links .footer-social-link span {
+  display: none;
+}
+
+.footer-copyright {
+  color: #C5C9CD;
+}
+
+.footer-contact {
+  margin-bottom: 15px;
+}
+
+.footer-telephone,
+.footer-email {
+  padding: 3px 0;
+}
+.footer-telephone i,
+.footer-email i {
+  color: #C8A45D;
+  width: 30px;
+}
+.footer-telephone a,
+.footer-email a {
+  color: #C5C9CD;
+  text-decoration: none;
+}
+.footer-telephone a:hover,
+.footer-email a:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 .artist-hero {
@@ -13339,7 +13463,7 @@ header::after {
   align-items: stretch;
 }
 .artist__multimedia .artist-column {
-  padding: 30px;
+  padding: 60px 30px;
 }
 .artist__multimedia .multimedia__video,
 .artist__multimedia .multimedia__gallery {

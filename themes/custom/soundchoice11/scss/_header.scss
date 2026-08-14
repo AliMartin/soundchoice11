@@ -1,6 +1,7 @@
 header {
   position: relative;
 
+  // Fancy gradient bottom border
   &::after {
     content: "";
     position: absolute;
@@ -16,5 +17,45 @@ header {
       $gold 65%,
       rgba($gold, 0) 100%
     );
+  }
+
+  nav.navbar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+#block-soundchoice11-branding {
+
+  .navbar-brand {
+    font-family: $headings-font-family;
+    text-transform: uppercase;
+
+    a {
+      text-decoration: none;
+      outline: none;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .site-title {
+      font-weight: 200;
+      letter-spacing: 5px;
+      .site-title-sound {
+        color: $white;
+      }
+      .site-title-choice {
+        color: $gold;
+      }
+    }
+
+    .site-slogan {
+      font-size: x-small;
+      color: $white;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+
   }
 }
