@@ -1,0 +1,29 @@
+uuid: b211fecc-bff3-45db-9e5f-c4495d7a6bdc
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profile_image
+    - media.type.image
+    - node.type.artist
+id: node.artist.field_profile_image
+field_name: field_profile_image
+entity_type: node
+bundle: artist
+label: 'Profile image'
+description: 'Upload a high-quality landscape image of the full act. This image is used on Artist cards and as the fallback hero image if no background video is available. Minimum 1920 × 1080px; 16:9 landscape recommended.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

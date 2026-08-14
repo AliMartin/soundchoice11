@@ -1,0 +1,20 @@
+/**
+ * Sound Choice Artist editing form.
+ *
+ * Display checkbox-based option widgets (including taxonomy term fields)
+ * as a responsive grid rather than one long vertical list.
+ */
+.soundchoice-artist-form .field--widget-options-buttons .form-checkboxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.5rem 1rem;
+}
+
+.soundchoice-artist-form .field--widget-options-buttons .form-checkboxes > .form-item {
+  margin-block: 0;
+}
+
+/* Claro/Gin-compatible fallback for checkbox item wrappers. */
+.soundchoice-artist-form .field--widget-options-buttons .form-type--checkbox {
+  margin-block: 0;
+}

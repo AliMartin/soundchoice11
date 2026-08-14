@@ -1,0 +1,22 @@
+uuid: b919126c-39cc-403e-9089-1848a4cd52b3
+langcode: en
+status: true
+dependencies:
+  theme:
+    - soundchoice11
+_core:
+  default_config_hash: LcI1XOaFH69aZwNmrEeg_ZrYsaMc4vVmtmzb5YRNyBU
+id: soundchoice11_local_tasks
+theme: soundchoice11
+region: content
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

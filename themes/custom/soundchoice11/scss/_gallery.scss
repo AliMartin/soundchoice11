@@ -1,0 +1,154 @@
+.artist-gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1px;
+
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: $border-radius-lg;
+  background: rgba($secondary,0.5);
+  // background: $gold;
+
+  &__item {
+    position: relative;
+    display: block;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+
+    border: 0;
+    background: $dark;
+    text-decoration: none;
+
+    &:first-child {
+      grid-row: 1 / 4;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      transition:
+        transform .3s ease,
+        filter .3s ease;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba($dark, 0);
+      transition: background .3s ease;
+      pointer-events: none;
+    }
+
+    &:hover,
+    &:focus-visible {
+      img {
+        transform: scale(1.04);
+      }
+
+      &::after {
+        background: rgba($dark, .18);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid $gold;
+      outline-offset: -2px;
+    }
+  }
+
+  &__more {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px;
+
+    background: rgba($dark, .65);
+    color: $light;
+
+    font-family: $headings-font-family;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+
+    transition: background .3s ease;
+  }
+
+  &__item:hover &__more,
+  &__item:focus-visible &__more {
+    background: rgba($dark, .78);
+  }
+
+  &__hidden {
+    display: none;
+  }
+}
+
+.artist-gallery__hidden {
+  display: none;
+}
+
+.glightbox-clean .gslide-description {
+  background: $dark;
+  .gslide-title {
+    color : $text-secondary;
+  }
+}
+
+
+
+// Gallery fallback
+.artist-gallery--fallback {
+  display: block;
+}
+
+.artist-gallery__fallback {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.artist-gallery__fallback-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  background: rgba($dark, .55);
+  color: $light;
+
+  font-family: $headings-font-family;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+
+  i {
+    font-size: 2rem;
+    color: $gold;
+  }
+}

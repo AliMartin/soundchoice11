@@ -1,0 +1,19 @@
+uuid: d48e8857-5a04-4a0d-a209-4469e7cdd8d7
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_email
+    - node.type.artist
+id: node.artist.field_contact_email
+field_name: field_contact_email
+entity_type: node
+bundle: artist
+label: 'Contact email'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

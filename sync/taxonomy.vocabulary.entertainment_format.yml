@@ -1,0 +1,9 @@
+uuid: 49db3a00-869f-4528-a22f-8d073cf14e3f
+langcode: en-gb
+status: true
+dependencies: {  }
+name: 'Entertainment format'
+vid: entertainment_format
+description: null
+weight: 0
+new_revision: false

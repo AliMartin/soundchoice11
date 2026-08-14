@@ -1,0 +1,127 @@
+<?php
+
+/**
+ * @file
+ * Sound Choice 11 theme file.
+ */
+
+use Drupal\node\NodeInterface;
+
+
+/**
+ * Implements hook_preprocess_block().
+ *
+ * Suppresses the default page title on Artist nodes because the H1
+ * is rendered inside node--artist--full.html.twig.
+ */
+function soundchoice11_preprocess_block(array &$variables): void {
+  if ($variables['plugin_id'] !== 'page_title_block') {
+    return;
+  }
+
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if ($node instanceof NodeInterface && $node->bundle() === 'artist') {
+    $variables['content'] = [];
+  }
+}
+
+
+/**
+ * Adds view-mode-specific taxonomy term template suggestions.
+ *
+ * Used to render custom Font Awesome icons for Attributes taxonomy terms.
+ */
+function soundchoice11_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables): void {
+  $term = $variables['elements']['#taxonomy_term'] ?? NULL;
+  $view_mode = $variables['elements']['#view_mode'] ?? NULL;
+
+  if ($term && $view_mode) {
+    $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $view_mode;
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_node().
+ *
+ * Prepares Artist-specific data for promotional videos and image galleries.
+ */
+function soundchoice11_preprocess_node(array &$variables): void {
+  $node = $variables['node'] ?? NULL;
+
+  if (!$node instanceof NodeInterface || $node->bundle() !== 'artist') {
+    return;
+  }
+
+
+  /*
+   * --------------------------------------------------------------------------
+   * Promotional videos
+   * --------------------------------------------------------------------------
+   */
+
+  $variables['artist_videos'] = [];
+
+  if (
+    $node->hasField('field_promotional_videos') &&
+    !$node->get('field_promotional_videos')->isEmpty()
+  ) {
+    $media_view_builder = \Drupal::entityTypeManager()->getViewBuilder('media');
+
+    foreach ($node->get('field_promotional_videos')->referencedEntities() as $media) {
+      if (
+        !$media->hasField('field_media_oembed_video') ||
+        $media->get('field_media_oembed_video')->isEmpty()
+      ) {
+        continue;
+      }
+
+      $variables['artist_videos'][] = [
+        'url' => $media->get('field_media_oembed_video')->value,
+        'title' => $media->label(),
+        'thumbnail' => $media_view_builder->view($media, 'video_thumbnail'),
+      ];
+    }
+  }
+
+
+  /*
+   * --------------------------------------------------------------------------
+   * Image gallery
+   * --------------------------------------------------------------------------
+   */
+
+  $variables['artist_gallery'] = [];
+
+  if (
+    $node->hasField('field_image_gallery') &&
+    !$node->get('field_image_gallery')->isEmpty()
+  ) {
+    $file_url_generator = \Drupal::service('file_url_generator');
+
+    foreach ($node->get('field_image_gallery')->referencedEntities() as $media) {
+      if (
+        !$media->hasField('field_media_image') ||
+        $media->get('field_media_image')->isEmpty()
+      ) {
+        continue;
+      }
+
+      $image = $media->get('field_media_image');
+      $file = $image->entity;
+
+      if (!$file) {
+        continue;
+      }
+
+      $variables['artist_gallery'][] = [
+        'url' => $file_url_generator->generateAbsoluteString(
+          $file->getFileUri()
+        ),
+        'alt' => $image->alt ?: $media->label(),
+        'title' => $media->label(),
+      ];
+    }
+  }
+}

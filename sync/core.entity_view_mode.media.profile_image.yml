@@ -1,0 +1,11 @@
+uuid: 6f7eac77-6c10-4eff-a0a3-7800e7f85b1f
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - media
+id: media.profile_image
+label: 'Profile image'
+description: null
+targetEntityType: media
+cache: true

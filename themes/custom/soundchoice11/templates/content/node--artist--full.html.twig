@@ -1,0 +1,420 @@
+{#
+/**
+ * @file
+ * Theme override for the full Artist node.
+ */
+#}
+
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+
+{{ attach_library('bootstrap5/node') }}
+{{ attach_library('soundchoice11/artist-video') }}
+
+
+{# ==========================================================================
+   Artist hero
+   ========================================================================== #}
+
+{# Establish whether the Artist has a usable background video. #}
+{% set video_file = null %}
+{% set poster_image = null %}
+
+{% if node.field_background_video.entity %}
+  {% set background_media = node.field_background_video.entity %}
+  {% set video_file = background_media.field_media_video_file.entity %}
+  {% set poster_image = background_media.field_media_image.entity %}
+{% endif %}
+
+
+{# Establish the required Artist profile image. #}
+{% set profile_image = null %}
+
+{% if node.field_profile_image.entity %}
+  {% set profile_media = node.field_profile_image.entity %}
+  {% set profile_image = profile_media.field_media_image.entity %}
+{% endif %}
+
+
+<section class="artist-hero">
+
+  {# Background video takes priority when an actual MP4 exists. #}
+  {% if video_file %}
+
+    <video
+      class="artist-hero__video"
+      autoplay
+      muted
+      loop
+      playsinline
+      {% if poster_image %}
+        poster="{{ file_url(poster_image.uri.value) }}"
+      {% endif %}
+    >
+      <source
+        src="{{ file_url(video_file.uri.value) }}"
+        type="{{ video_file.filemime.value }}"
+      >
+    </video>
+
+  {# Otherwise fall back to the required Artist profile image. #}
+  {% elseif profile_image %}
+
+    <div class="artist-hero__fallback">
+      <img
+        src="{{ file_url(profile_image.uri.value) }}"
+        alt=""
+      >
+    </div>
+
+  {% endif %}
+
+
+  <div class="artist-hero__overlay"></div>
+
+
+  <div class="container artist-hero__content">
+
+    {% if content.field_slogan %}
+      <div class="artist-hero__slogan">
+        {{ content.field_slogan }}
+      </div>
+    {% endif %}
+
+
+    <h1>{{ label }}</h1>
+
+
+    <div class="title-separator"></div>
+
+
+    {% if content.field_summary %}
+      <div class="artist-hero__summary">
+        {{ content.field_summary }}
+      </div>
+    {% endif %}
+
+
+    {% if content.field_act_type %}
+      <div class="artist-hero__act-type">
+        <label>Type of act</label>
+        {{ content.field_act_type }}
+      </div>
+    {% endif %}
+
+
+    {% if content.field_featured_attributes %}
+      <div class="artist-hero__attributes">
+        {{ content.field_featured_attributes }}
+      </div>
+    {% endif %}
+
+
+    <div class="artist-hero__cta">
+      <a href="#" class="btn">
+        <i class="fa-light fa-calendar"></i>
+        <span>Enquire / Book</span>
+        <i class="fa-light fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+
+{# ==========================================================================
+   Main Artist content
+   ========================================================================== #}
+
+<article{{ attributes.addClass(classes) }}>
+
+
+  {# ------------------------------------------------------------------------
+     All attributes
+     ------------------------------------------------------------------------ #}
+
+  {% if content.field_attributes %}
+    <div class="artist__all-attributes">
+      {{ content.field_attributes }}
+    </div>
+  {% endif %}
+
+
+  {# ------------------------------------------------------------------------
+     Video and gallery
+     ------------------------------------------------------------------------ #}
+
+  <div class="artist__multimedia">
+
+    <div class="row g-4">
+
+
+      {# Promotional videos #}
+
+      <div class="col-12 col-md-6 artist-column">
+
+        <div class="multimedia__video">
+
+          <h2>Watch and listen</h2>
+
+
+{% if artist_videos %}
+
+  <div class="artist-video">
+
+    <div class="artist-video__player">
+      <div
+        class="js-artist-video-player"
+        data-plyr-provider="youtube"
+        data-plyr-embed-id="{{ artist_videos.0.url }}">
+      </div>
+    </div>
+
+    {% if artist_videos|length > 1 %}
+
+      <div class="artist-video__carousel">
+
+        <button
+          class="artist-video__nav artist-video__nav--previous"
+          type="button"
+          aria-label="Previous videos">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="artist-video__thumbnails">
+
+          {% for video in artist_videos %}
+
+            <button
+              class="artist-video__thumbnail{% if loop.first %} is-active{% endif %}"
+              type="button"
+              data-video-url="{{ video.url }}"
+              aria-label="Play {{ video.title }}">
+
+              {{ video.thumbnail }}
+
+            </button>
+
+          {% endfor %}
+
+        </div>
+
+        <button
+          class="artist-video__nav artist-video__nav--next"
+          type="button"
+          aria-label="Next videos">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+      </div>
+
+    {% endif %}
+
+  </div>
+
+    {% elseif profile_image %}
+
+      <div class="artist-video artist-video--fallback">
+
+        <div class="artist-video__fallback">
+
+          <img
+            src="{{ file_url(profile_image.uri.value) }}"
+            alt=""
+            loading="lazy">
+
+          <div class="artist-video__fallback-overlay">
+            <i class="fa-light fa-video"></i>
+            <span>Video coming soon</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    {% endif %}
+
+  </div>
+
+</div>
+
+
+      {# Image gallery #}
+
+      <div class="col-12 col-md-6 artist-column">
+
+        <div class="multimedia__gallery">
+
+          <h2>Gallery</h2>
+
+
+{% if artist_gallery %}
+
+  {% set gallery_count = artist_gallery|length %}
+  {% set preview_images = artist_gallery|slice(0, 4) %}
+
+  <div class="artist-gallery">
+
+    {% for image in preview_images %}
+
+      <a
+        class="artist-gallery__item artist-gallery__item--{{ loop.index }} glightbox"
+        href="{{ image.url }}"
+        data-gallery="artist-gallery-{{ node.id }}"
+        data-title="{{ image.title }}"
+        aria-label="View {{ image.alt }}">
+
+        <img
+          src="{{ image.url }}"
+          alt="{{ image.alt }}"
+          loading="lazy">
+
+        {% if loop.last and gallery_count > 4 %}
+          <span class="artist-gallery__more">
+            +{{ gallery_count - 4 }} photos
+          </span>
+        {% endif %}
+
+      </a>
+
+    {% endfor %}
+
+  </div>
+
+  {% if gallery_count > 4 %}
+
+    <div class="artist-gallery__hidden">
+
+      {% for image in artist_gallery|slice(4) %}
+
+        <a
+          class="glightbox"
+          href="{{ image.url }}"
+          data-gallery="artist-gallery-{{ node.id }}"
+          data-title="{{ image.title }}"
+          aria-label="View {{ image.alt }}">
+        </a>
+
+      {% endfor %}
+
+    </div>
+
+  {% endif %}
+
+
+{# No gallery: use the required Artist profile image. #}
+{% elseif profile_image %}
+
+  <div class="artist-gallery artist-gallery--fallback">
+
+    <div class="artist-gallery__fallback">
+
+      <img
+        src="{{ file_url(profile_image.uri.value) }}"
+        alt=""
+        loading="lazy">
+
+      <div class="artist-gallery__fallback-overlay">
+        <i class="fa-light fa-images"></i>
+        <span>More photos coming soon</span>
+      </div>
+
+    </div>
+
+  </div>
+
+{% endif %}
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  {# ------------------------------------------------------------------------
+     Biography and summary
+     ------------------------------------------------------------------------ #}
+
+  <div class="artist__biography-and-summary">
+    <div class="row g-4">
+      <div class="col-12 col-lg-8 artist-column">
+        <div class="artist__biography">
+          <h2>About {{ label }}</h2>
+
+          {% if content.field_body %}
+            {{ content.field_body }}
+          {% endif %}
+
+        </div>
+      </div>
+
+
+      <div class="col-12 col-lg-4 artist-column">
+        <div class="artist__summary">
+          <h2>At a glance</h2>
+
+            {% if not node.field_price_from.isEmpty() %}
+              <div class="artist__price-from">
+                <h3>Pricing guide</h3>
+                <label>From</label>
+                {{ content.field_price_from }}
+              </div>
+            {% endif %}
+
+            {% if not node.field_tribute_to.isEmpty() %}
+              <div class="artist__tribute-to">
+                <h3>Tribute to</h3>
+                {{ content.field_tribute_to }}
+              </div>
+            {% endif %}
+
+            {% if not node.field_suitable_for.isEmpty() %}
+              <div class="artist__suitable-for">
+                <h3>Suitable for</h3>
+                {{ content.field_suitable_for }}
+              </div>
+            {% endif %}
+
+            {% if not node.field_genres.isEmpty() %}
+              <div class="artist__genres">
+                <h3>Genres</h3>
+                {{ content.field_genres }}
+              </div>
+            {% endif %}
+
+            {% if not node.field_era.isEmpty() %}
+              <div class="artist__era">
+                <h3>Era</h3>
+                {{ content.field_era }}
+              </div>
+            {% endif %}
+
+          <div class="artist-hero__cta">
+            <a href="#" class="btn">
+              <i class="fa-light fa-calendar"></i>
+              <span>Enquire / Book</span>
+              <i class="fa-light fa-arrow-right"></i>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</article>

@@ -1,0 +1,22 @@
+uuid: e57e9e8b-18be-4e38-a67b-7a1cb39bef91
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - soundchoice11
+_core:
+  default_config_hash: 9RE4H9hYPal87I4FMJtq48Egmx9eTpocaFCMW9WjHUU
+id: soundchoice11_content
+theme: soundchoice11
+region: content
+weight: -1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

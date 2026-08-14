@@ -1,0 +1,25 @@
+.artist-hero__cta {
+  a {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid $gold;
+    &:hover {
+      border: 1px solid $gold;
+      background-color: $gold;
+      i {
+        color: $white;
+      }
+    }
+  }
+  i {
+    font-size: x-large;
+    color: $gold;
+  }
+  span {
+    text-transform: uppercase;
+    margin: 0 15px;
+    letter-spacing: 2px;
+    font-weight: 200;
+  }
+}

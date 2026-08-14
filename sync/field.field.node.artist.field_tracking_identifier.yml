@@ -1,0 +1,19 @@
+uuid: 4f658185-fa77-4877-8532-6d6c30b679f5
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tracking_identifier
+    - node.type.artist
+id: node.artist.field_tracking_identifier
+field_name: field_tracking_identifier
+entity_type: node
+bundle: artist
+label: 'Tracking identifier'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

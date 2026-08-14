@@ -1,0 +1,11 @@
+uuid: ee0192bd-7466-481e-8410-17b878b4b365
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.icon_view
+label: 'Icon view'
+description: 'Displays the taxonomy term and an associated Font Awesome icon.'
+targetEntityType: taxonomy_term
+cache: true

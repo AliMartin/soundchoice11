@@ -1,0 +1,27 @@
+uuid: 7aeac9ef-8efe-44a7-990c-a7860f005f40
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - soundchoice11
+_core:
+  default_config_hash: wsmFyO6Igv654gSvaKCcVVBv20u0UywMemngvdP1Nfs
+id: soundchoice11_account_menu
+theme: soundchoice11
+region: nav_additional
+weight: -7
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

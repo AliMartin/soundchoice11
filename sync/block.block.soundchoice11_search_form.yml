@@ -1,0 +1,23 @@
+uuid: ffe4f014-546f-4403-89e5-b13f64bce2ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - soundchoice11
+_core:
+  default_config_hash: Ziuco_BdmmvG9CvC3FEobiSi573KtOmsiysqWEAcauY
+id: soundchoice11_search_form
+theme: soundchoice11
+region: nav_additional
+weight: 0
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form'
+  label_display: '0'
+  provider: search
+  page_id: null
+visibility: {  }

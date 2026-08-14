@@ -1,0 +1,22 @@
+uuid: 13dd0e84-4264-436c-99e2-f4c998fc5ddd
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - soundchoice11
+_core:
+  default_config_hash: iYkW0rvqx2M9h5FoR09ZusWtMW7LswuzcG129QLI2EQ
+id: soundchoice11_messages
+theme: soundchoice11
+region: content
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,29 @@
+uuid: c87d8112-092a-4eba-8490-4e30f6037b99
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_era
+    - node.type.artist
+    - taxonomy.vocabulary.era
+id: node.artist.field_era
+field_name: field_era
+entity_type: node
+bundle: artist
+label: Era
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      era: era
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,22 @@
+uuid: ed59a14b-dae9-4cc3-a22d-e245accf1633
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - soundchoice11
+_core:
+  default_config_hash: wX79P7ZX53ZAI5fQRYeQtldJi33WDIBS8ygOoYQ7rDA
+id: soundchoice11_help
+theme: soundchoice11
+region: content
+weight: -3
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

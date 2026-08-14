@@ -1,0 +1,19 @@
+uuid: a8f0660e-2b38-452c-bd8a-b3da8f499b4f
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_icon
+    - taxonomy.vocabulary.attributes
+id: taxonomy_term.attributes.field_icon
+field_name: field_icon
+entity_type: taxonomy_term
+bundle: attributes
+label: Icon
+description: 'Enter just the Font Awesome icon name, i.e. if the full icon code is <em>"fa-sharp fa-light fa-people-group"></em> then just enter <em>people-group</em>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

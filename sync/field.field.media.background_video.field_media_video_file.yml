@@ -1,0 +1,27 @@
+uuid: 2a13c305-49b8-4f89-a8e3-7832a6aae6e6
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_video_file
+    - media.type.background_video
+  module:
+    - file
+id: media.background_video.field_media_video_file
+field_name: field_media_video_file
+entity_type: media
+bundle: background_video
+label: File
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: mp4
+  max_filesize: ''
+  description_field: false
+field_type: file

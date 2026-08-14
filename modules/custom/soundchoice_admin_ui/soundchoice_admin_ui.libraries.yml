@@ -1,0 +1,4 @@
+artist_form:
+  css:
+    theme:
+      css/artist-form.css: {}

@@ -1,0 +1,13 @@
+uuid: 9fee199b-18ae-4e33-a76b-fa5afa0a67e2
+langcode: en-gb
+status: true
+dependencies:
+  enforced:
+    theme:
+      - olivero
+_core:
+  default_config_hash: z7ynTCss9wwEi8ojENJ08qx44RN6leI-tqoN2o5QzdE
+id: olivero_medium
+label: 'Olivero Medium'
+locked: false
+pattern: 'j F Y'

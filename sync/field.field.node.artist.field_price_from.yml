@@ -1,0 +1,23 @@
+uuid: 2d3dd6ed-910a-4343-9633-49731e88ae14
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_price_from
+    - node.type.artist
+id: node.artist.field_price_from
+field_name: field_price_from
+entity_type: node
+bundle: artist
+label: 'Price from'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: £
+  suffix: ''
+field_type: integer

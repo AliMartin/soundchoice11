@@ -1,0 +1,5 @@
+name: Sound Choice Admin UI
+type: module
+description: 'Admin UI enhancements for Sound Choice content editing.'
+package: Sound Choice
+core_version_requirement: ^11

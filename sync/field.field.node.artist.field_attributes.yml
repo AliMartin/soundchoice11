@@ -1,0 +1,29 @@
+uuid: 3c06190d-fd01-4702-8a72-4d7c6d3c2b2d
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attributes
+    - node.type.artist
+    - taxonomy.vocabulary.attributes
+id: node.artist.field_attributes
+field_name: field_attributes
+entity_type: node
+bundle: artist
+label: Attributes
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      attributes: attributes
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: attributes
+field_type: entity_reference

@@ -1,0 +1,25 @@
+uuid: 815db759-6c8c-4812-a206-4057d4432a0d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - soundchoice11
+_core:
+  default_config_hash: lPq9ByGc8ttEoKsxtHqgSmnpUoerXwYpclo6sneZRs8
+id: soundchoice11_branding
+theme: soundchoice11
+region: nav_branding
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

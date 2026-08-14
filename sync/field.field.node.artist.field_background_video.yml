@@ -1,0 +1,29 @@
+uuid: 07de6db2-ab68-459d-a4a5-fb30c6cae6b2
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_background_video
+    - media.type.background_video
+    - node.type.artist
+id: node.artist.field_background_video
+field_name: field_background_video
+entity_type: node
+bundle: artist
+label: 'Background video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      background_video: background_video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: remote_video
+field_type: entity_reference

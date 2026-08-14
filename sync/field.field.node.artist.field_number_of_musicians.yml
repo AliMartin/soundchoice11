@@ -1,0 +1,23 @@
+uuid: 5125a24c-eedb-4ff0-9622-4b056e61ef85
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_number_of_musicians
+    - node.type.artist
+id: node.artist.field_number_of_musicians
+field_name: field_number_of_musicians
+entity_type: node
+bundle: artist
+label: 'Number of musicians'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

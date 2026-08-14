@@ -1,0 +1,41 @@
+uuid: f7e4b241-4731-4ff7-8b1f-52b082764686
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.media.background_video.field_media_image
+    - field.field.media.background_video.field_media_video_file
+    - image.style.large
+    - media.type.background_video
+  module:
+    - file
+    - image
+id: media.background_video.default
+targetEntityType: media
+bundle: background_video
+mode: default
+content:
+  field_media_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media_video_file:
+    type: file_default
+    label: visually_hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

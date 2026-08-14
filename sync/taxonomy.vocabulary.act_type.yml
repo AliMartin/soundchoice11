@@ -1,0 +1,9 @@
+uuid: f7c46fc7-1d4b-49e2-bf29-a8d3294787fc
+langcode: en-gb
+status: true
+dependencies: {  }
+name: 'Act type'
+vid: act_type
+description: null
+weight: 0
+new_revision: false
