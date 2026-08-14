@@ -12806,5 +12806,11 @@ a > .ck-content code {
   font-size: 2rem;
   color: #C8A45D;
 }
+.ck-content .maintenance-page h1.site-name, .ck-content .maintenance-page .site-name.h1 {
+  text-align: center;
+}
+.ck-content .maintenance-page h1.site-name a:hover, .ck-content .maintenance-page .site-name.h1 a:hover {
+  text-decoration: none;
+}
 
 /*# sourceMappingURL=ck5style.css.map */

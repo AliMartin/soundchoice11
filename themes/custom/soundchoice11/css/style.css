@@ -13631,4 +13631,11 @@ header::after {
   color: #C8A45D;
 }
 
+.maintenance-page h1.site-name, .maintenance-page .site-name.h1 {
+  text-align: center;
+}
+.maintenance-page h1.site-name a:hover, .maintenance-page .site-name.h1 a:hover {
+  text-decoration: none;
+}
+
 /*# sourceMappingURL=style.css.map */
