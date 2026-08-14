@@ -1,0 +1,25 @@
+uuid: 1cf41e62-854c-4262-bba9-b09974ecb246
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - system.menu.explore
+  module:
+    - system
+  theme:
+    - soundchoice11
+id: soundchoice11_explore
+theme: soundchoice11
+region: footer_2
+weight: 0
+provider: null
+plugin: 'system_menu_block:explore'
+settings:
+  id: 'system_menu_block:explore'
+  label: Explore
+  label_display: visible
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

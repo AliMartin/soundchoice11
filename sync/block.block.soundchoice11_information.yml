@@ -1,0 +1,25 @@
+uuid: db62ee23-ff62-425e-9e89-1c9672e64faa
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - system.menu.information
+  module:
+    - system
+  theme:
+    - soundchoice11
+id: soundchoice11_information
+theme: soundchoice11
+region: footer_3
+weight: 0
+provider: null
+plugin: 'system_menu_block:information'
+settings:
+  id: 'system_menu_block:information'
+  label: Information
+  label_display: visible
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

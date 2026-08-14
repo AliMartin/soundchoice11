@@ -1,0 +1,25 @@
+uuid: 33352220-2aae-4274-919f-c3604bd63ee0
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - system.menu.legal
+  module:
+    - system
+  theme:
+    - soundchoice11
+id: soundchoice11_legal
+theme: soundchoice11
+region: footer_4
+weight: 0
+provider: null
+plugin: 'system_menu_block:legal'
+settings:
+  id: 'system_menu_block:legal'
+  label: Legal
+  label_display: visible
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

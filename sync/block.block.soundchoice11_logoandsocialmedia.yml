@@ -1,0 +1,23 @@
+uuid: c5e16311-6e2b-447f-b76d-c6f8e209e95a
+langcode: en-gb
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:1dfbac77-62d9-46ec-9471-f7df66f3079a'
+  module:
+    - block_content
+  theme:
+    - soundchoice11
+id: soundchoice11_logoandsocialmedia
+theme: soundchoice11
+region: footer_1
+weight: 0
+provider: null
+plugin: 'block_content:1dfbac77-62d9-46ec-9471-f7df66f3079a'
+settings:
+  id: 'block_content:1dfbac77-62d9-46ec-9471-f7df66f3079a'
+  label: 'Logo and social media'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

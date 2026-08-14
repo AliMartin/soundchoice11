@@ -1,0 +1,8 @@
+uuid: c03a7c39-22f9-4681-b59f-42939b1e75b8
+langcode: en-gb
+status: true
+dependencies: {  }
+id: explore
+label: Explore
+description: ''
+locked: false

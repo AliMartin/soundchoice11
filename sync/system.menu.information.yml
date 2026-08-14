@@ -1,0 +1,8 @@
+uuid: 4bc8088e-9310-44cb-ae52-33e850ff1c3f
+langcode: en-gb
+status: true
+dependencies: {  }
+id: information
+label: Information
+description: ''
+locked: false
