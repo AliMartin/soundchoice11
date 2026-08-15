@@ -29,6 +29,8 @@
         "drupal/gin": "^5.0",
         "drupal/glightbox": "^1.0",
         "drupal/responsive_favicons": "^4.0",
+        "drupal/search_api": "^1.41",
+        "drupal/twig_tweak": "^3.4",
         "drush/drush": "^13.7"
     },
     "conflict": {

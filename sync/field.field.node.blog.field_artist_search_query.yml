@@ -1,0 +1,19 @@
+uuid: b64827c4-9961-46f2-9f55-d713a767aa5c
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_artist_search_query
+    - node.type.blog
+id: node.blog.field_artist_search_query
+field_name: field_artist_search_query
+entity_type: node
+bundle: blog
+label: 'Artist search query'
+description: 'Enter a natural-language search query used to select relevant artists for this article, e.g. “high energy party band for corporate events”. Leave blank to display no artists.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

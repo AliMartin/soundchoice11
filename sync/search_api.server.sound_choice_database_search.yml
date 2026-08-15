@@ -1,0 +1,15 @@
+uuid: 93eccda2-5385-4ea2-96bf-826a8ea566e0
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: sound_choice_database_search
+name: 'Sound Choice database search'
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 1
+  matching: words
+  phrase: bigram

@@ -2,6 +2,8 @@ uuid: 36897d8d-998d-4fcc-a337-108b586c2fd8
 langcode: en
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - soundchoice11
 _core:
@@ -9,7 +11,7 @@ _core:
 id: soundchoice11_page_title
 theme: soundchoice11
 region: content
-weight: -6
+weight: -7
 provider: null
 plugin: page_title_block
 settings:
@@ -17,4 +19,8 @@ settings:
   label: 'Page title'
   label_display: '0'
   provider: core
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'

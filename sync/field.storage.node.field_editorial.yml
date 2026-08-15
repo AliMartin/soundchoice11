@@ -1,0 +1,19 @@
+uuid: c5eee20c-6128-40a7-8b40-f189bd6cce76
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_editorial
+field_name: field_editorial
+entity_type: node
+type: text_with_summary
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -18,6 +18,7 @@ regions:
   content: 'Main content'
   sidebar_first: 'Sidebar first'
   sidebar_second: 'Sidebar second'
+  front_content: 'Front page content'
   footer_1: 'Footer column 1'
   footer_2: 'Footer column 2'
   footer_3: 'Footer column 3'

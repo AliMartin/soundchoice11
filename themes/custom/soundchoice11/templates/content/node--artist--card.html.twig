@@ -1,0 +1,64 @@
+{#
+/**
+ * @file
+ * Artist card view mode.
+ */
+#}
+
+{%
+  set classes = [
+    'artist-card',
+    'card',
+    'h-100',
+  ]
+%}
+
+<article{{ attributes.addClass(classes) }}>
+
+  {% if content.field_profile_image %}
+    <div class="artist-card__image">
+      <a href="{{ url }}" aria-label="View {{ node.label }}">
+        {{ content.field_profile_image }}
+      </a>
+    </div>
+  {% endif %}
+
+  <div class="card-body d-flex flex-column">
+
+    <h2 class="artist-card__title h4">
+      <a href="{{ url }}">
+        {{ node.label }}
+      </a>
+    </h2>
+
+    {#
+    {% if not node.field_tribute_to.isEmpty() %}
+      <div class="artist-card__tribute">
+        <label>Tribute to</label>
+        {{ content.field_tribute_to }}
+      </div>
+    {% endif %}
+    #}
+
+    {% if not node.field_summary.isEmpty() %}
+      <div class="artist-card__summary">
+        {{ content.field_summary }}
+      </div>
+    {% endif %}
+
+    {% if not node.field_featured_attributes.isEmpty() %}
+      <div class="artist-card__attributes">
+        {{ content.field_featured_attributes }}
+      </div>
+    {% endif %}
+
+    <div class="artist-card__cta mt-auto">
+      <a href="{{ url }}" class="btn btn-primary">
+        <span>View artist</span>
+        <i class="fa-light fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </div>
+
+</article>

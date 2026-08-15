@@ -1,0 +1,29 @@
+uuid: bc83e339-e48a-4572-98d0-64de10dc548a
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - views.view.artist_contextual_search
+  module:
+    - system
+    - views
+  theme:
+    - soundchoice11
+id: soundchoice11_views_block__artist_contextual_search_block_1
+theme: soundchoice11
+region: content
+weight: -1
+provider: null
+plugin: 'views_block:artist_contextual_search-block_1'
+settings:
+  id: 'views_block:artist_contextual_search-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: null
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

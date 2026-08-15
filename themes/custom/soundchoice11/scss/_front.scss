@@ -1,0 +1,179 @@
+.homepage-search {
+  display: flex;
+  align-items: center;
+
+  min-height: 70vh;
+  padding: 80px 0;
+
+  background: $body-bg;
+  color: $text-primary;
+
+  &__inner {
+    max-width: 1000px;
+    text-align: center;
+  }
+
+  &__intro {
+    max-width: 780px;
+    margin: 0 auto 40px;
+
+    h1 {
+      margin-bottom: 15px;
+      font-size: clamp(2.75rem, 5vw, 4.75rem);
+      line-height: 1.05;
+    }
+
+    p {
+      margin: 0;
+      color: $text-secondary;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__form {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  &__field {
+    display: flex;
+    padding: 6px;
+
+    border: 3px solid rgba($gold, 1);
+    border-radius: $border-radius-xl;
+
+    background: $white;
+  }
+
+  &__input {
+    flex: 1;
+    min-width: 0;
+
+    padding: 18px 20px;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+    color: $dark;
+
+    font-size: 1.25rem;
+
+    &::placeholder {
+      color: $text-muted;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  &__submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 12px 24px;
+
+    border: 0;
+    border-radius: $border-radius;
+
+    background: $gold;
+    color: $dark;
+
+    font-weight: 600;
+
+    &:hover,
+    &:focus-visible {
+      background: $gold-light;
+    }
+  }
+
+  &__examples {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    min-height: 30px;
+    margin-top: 20px;
+
+    color: $text-muted;
+  }
+
+  &__example {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 0;
+    border: 0;
+
+    background: transparent;
+    color: $gold;
+
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+    }
+  }
+
+  &__cursor {
+    display: inline-block;
+
+    width: 1px;
+    height: 1em;
+    margin-left: 2px;
+
+    background: $gold;
+
+    animation: homepage-search-cursor .8s steps(1) infinite;
+  }
+}
+
+@keyframes homepage-search-cursor {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .homepage-search__cursor {
+    animation: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .homepage-search {
+    min-height: auto;
+    padding: 60px 0;
+
+    &__field {
+      flex-direction: column;
+    }
+
+    &__submit {
+      width: 100%;
+    }
+
+    &__examples {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+
+.front-content {
+  max-width: 800px;
+  margin: 0 auto 90px auto;
+}

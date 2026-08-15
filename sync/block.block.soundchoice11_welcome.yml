@@ -1,0 +1,23 @@
+uuid: 6e8dd3f5-90a9-4ca5-9ec8-f5e0d6fb6362
+langcode: en-gb
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:d21509ce-7b3b-4b4e-a1b2-103f353e6795'
+  module:
+    - block_content
+  theme:
+    - soundchoice11
+id: soundchoice11_welcome
+theme: soundchoice11
+region: front_content
+weight: -8
+provider: null
+plugin: 'block_content:d21509ce-7b3b-4b4e-a1b2-103f353e6795'
+settings:
+  id: 'block_content:d21509ce-7b3b-4b4e-a1b2-103f353e6795'
+  label: Welcome
+  label_display: visible
+  provider: block_content
+  view_mode: full
+visibility: {  }

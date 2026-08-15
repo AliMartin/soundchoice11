@@ -1,0 +1,41 @@
+uuid: e1e7282b-1784-4f07-8df3-2d95c4188638
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.node.blog.field_artist_search_query
+    - field.field.node.blog.field_editorial
+    - field.field.node.blog.field_image
+    - node.type.blog
+  module:
+    - text
+    - user
+id: node.blog.default
+targetEntityType: node
+bundle: blog
+mode: default
+content:
+  field_editorial:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: profile_image
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_artist_search_query: true
+  search_api_excerpt: true

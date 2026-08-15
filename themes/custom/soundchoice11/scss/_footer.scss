@@ -5,13 +5,14 @@ footer {
   font-size: smaller;
   padding: 4rem 0 6rem 0;
 
+  h2 {
+    font-size: large;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+
   nav {
-    h2 {
-      font-size: large;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-    }
     ul.navbar-nav a.nav-link {
       color: $text-secondary;
       padding: 3px 0;
@@ -27,7 +28,7 @@ footer {
 .footer-logo {
   margin-bottom: 15px;
   img {
-    width: 100%;
+    max-width: 220px;
     height: auto;
   }
 }

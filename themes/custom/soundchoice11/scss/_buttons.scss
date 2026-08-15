@@ -1,3 +1,22 @@
+.btn {
+  text-transform: uppercase;
+  margin: 0 15px;
+  letter-spacing: 2px;
+  font-weight: 200;
+}
+
+.btn-primary {
+  background-color: $dark;
+  color: $white;
+  border: none;
+  &:hover {
+    background-color: $gold;
+    color: $white;
+    border: none;
+  }
+}
+
+
 .artist-hero__cta,
 .footer-contact {
   a {

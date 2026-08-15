@@ -12,3 +12,9 @@ artist-video:
   dependencies:
     - core/drupal
     - core/once
+homepage-search:
+  js:
+    js/homepage-search.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

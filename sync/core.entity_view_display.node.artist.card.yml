@@ -1,0 +1,87 @@
+uuid: ad055b39-fe1f-4f69-acd4-8569c79b9d78
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.artist.field_act_type
+    - field.field.node.artist.field_attributes
+    - field.field.node.artist.field_background_video
+    - field.field.node.artist.field_body
+    - field.field.node.artist.field_contact_email
+    - field.field.node.artist.field_era
+    - field.field.node.artist.field_featured_attributes
+    - field.field.node.artist.field_genres
+    - field.field.node.artist.field_image_gallery
+    - field.field.node.artist.field_number_of_musicians
+    - field.field.node.artist.field_price_from
+    - field.field.node.artist.field_profile_image
+    - field.field.node.artist.field_promotional_videos
+    - field.field.node.artist.field_slogan
+    - field.field.node.artist.field_suitable_for
+    - field.field.node.artist.field_summary
+    - field.field.node.artist.field_tracking_identifier
+    - field.field.node.artist.field_tribute_to
+    - node.type.artist
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.artist.card
+targetEntityType: node
+bundle: artist
+mode: card
+content:
+  field_featured_attributes:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: icon_view
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_profile_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: profile_image
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_summary:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_tribute_to:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_act_type: true
+  field_attributes: true
+  field_background_video: true
+  field_body: true
+  field_contact_email: true
+  field_era: true
+  field_genres: true
+  field_image_gallery: true
+  field_number_of_musicians: true
+  field_price_from: true
+  field_promotional_videos: true
+  field_slogan: true
+  field_suitable_for: true
+  field_tracking_identifier: true
+  links: true
+  search_api_excerpt: true

@@ -1,0 +1,125 @@
+{%
+set nav_classes = 'navbar navbar-expand-lg' ~
+  (b5_navbar_schema != 'none' ? " navbar-#{b5_navbar_schema}" : ' ') ~
+  (b5_navbar_schema != 'none' ? (b5_navbar_schema == 'dark' ? ' text-light' : ' text-dark' ) : ' ') ~
+  (b5_navbar_bg_schema != 'none' ? " bg-#{b5_navbar_bg_schema}" : ' ')
+%}
+
+{%
+set footer_classes = ' ' ~
+  (b5_footer_schema != 'none' ? " footer-#{b5_footer_schema}" : ' ') ~
+  (b5_footer_schema != 'none' ? (b5_footer_schema == 'dark' ? ' text-light' : ' text-dark' ) : ' ') ~
+  (b5_footer_bg_schema != 'none' ? " bg-#{b5_footer_bg_schema}" : ' ')
+%}
+
+{{ attach_library('soundchoice11/homepage-search') }}
+
+{% include '@soundchoice11/includes/header.html.twig' %}
+
+<main role="main" class="front-page">
+
+  <a id="main-content" tabindex="-1"></a>
+
+
+  {# ==========================================================================
+     Homepage search hero
+     ========================================================================== #}
+
+  <section class="homepage-search">
+
+    <div class="{{ b5_top_container }} homepage-search__inner">
+
+      <div class="homepage-search__intro">
+
+        <h1>Find the perfect live act for your event</h1>
+
+        <p>
+          Search by event, style, genre or the kind of experience you want.
+        </p>
+
+      </div>
+
+
+      <form
+        class="homepage-search__form js-homepage-search-form"
+        action="/artist-search"
+        method="get">
+
+        <div class="homepage-search__field">
+
+          <label
+            for="homepage-artist-search"
+            class="visually-hidden">
+            Search artists
+          </label>
+
+          <input
+            id="homepage-artist-search"
+            class="homepage-search__input js-homepage-search-input"
+            type="search"
+            name="search"
+            placeholder="What are you looking for?"
+            autocomplete="off">
+
+          <button
+            class="homepage-search__submit"
+            type="submit">
+
+            <i class="fa-light fa-magnifying-glass"></i>
+
+            <span>Search</span>
+
+          </button>
+
+        </div>
+
+      </form>
+
+
+      <div
+        class="homepage-search__examples js-homepage-search-examples"
+        data-search-examples='[
+          "party band for a Christmas party",
+          "interactive band for a corporate event",
+          "female-fronted party band",
+          "live karaoke for a wedding",
+          "Muse tribute band"
+        ]'>
+
+        <span class="homepage-search__examples-label">
+          Try searching:
+        </span>
+
+        <button
+          type="button"
+          class="homepage-search__example js-homepage-search-example">
+
+          <span class="js-homepage-search-example-text"></span>
+
+          <span
+            class="homepage-search__cursor"
+            aria-hidden="true">
+          </span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  {# ==========================================================================
+     Homepage Drupal content
+     ========================================================================== #}
+
+  <section class="front-content">
+    <div class="{{ b5_top_container }}">
+      {{ page.front_content }}
+    </div>
+  </section>
+
+</main>
+
+{% include '@soundchoice11/includes/footer.html.twig' %}

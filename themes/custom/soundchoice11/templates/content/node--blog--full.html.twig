@@ -1,0 +1,100 @@
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+
+{{ attach_library('bootstrap5/node') }}
+
+<article{{ attributes.addClass(classes) }}>
+
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+
+  {# ==========================================================================
+     Blog hero
+     ========================================================================== #}
+
+  <section class="blog-hero">
+
+    {% if content.field_image %}
+      <div class="blog-hero__image">
+        {{ content.field_image }}
+      </div>
+    {% endif %}
+
+    <div class="blog-hero__overlay"></div>
+
+    <div class="container blog-hero__content">
+
+      <h1>{{ label }}</h1>
+
+      <div class="title-separator"></div>
+
+      {% if node.field_editorial.0.summary %}
+        <div class="blog-hero__summary">
+          {{ node.field_editorial.0.summary_processed }}
+        </div>
+      {% endif %}
+
+    </div>
+
+  </section>
+
+
+  {# ==========================================================================
+     Main editorial content
+     ========================================================================== #}
+
+  <section class="blog-content">
+    <div class="container">
+
+      <div class="row justify-content-center">
+
+        <div class="col-12 col-lg-8">
+
+          {% if node.field_editorial.0.value %}
+            <div class="blog-content__body">
+              {{ node.field_editorial.0.processed }}
+            </div>
+          {% endif %}
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  {# ==========================================================================
+     Recommended artists
+     ========================================================================== #}
+
+  {% if node.field_artist_search_query.value %}
+
+    <section class="blog-artists py-5">
+      <div class="container">
+
+        <div class="mb-4">
+          <h2 class="h3">Recommended artists</h2>
+        </div>
+
+        {{ drupal_view(
+          'artist_contextual_search',
+          'block_1',
+          node.field_artist_search_query.value
+        ) }}
+
+      </div>
+    </section>
+
+  {% endif %}
+
+</article>

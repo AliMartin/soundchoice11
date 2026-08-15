@@ -1,3 +1,7 @@
+/*
+ * ARTIST NODE
+ */
+
 // Video / image hero scaffolding
 .artist-hero {
   position: relative;
@@ -329,5 +333,51 @@
       margin-top: 45px;
     }
 
+  }
+}
+
+
+/*
+ * ARTIST CARD
+ */
+
+.artist-card {
+  max-width: 360px;
+  border-radius: $border-radius-xl;
+  color: $dark;
+
+  .artist-card__image {
+    img {
+      border-radius: $border-radius-xl $border-radius-xl 0 0;
+    }
+  }
+
+  h2 {
+    a:hover {
+      text-decoration: none;
+    }
+  }
+
+  .artist-card__summary {
+    margin-bottom: 15px;
+  }
+
+  .artist-card__attributes {
+    margin-bottom: 15px;
+    .attribute {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 4px 0;
+    }
+    i {
+      font-size: 20px;
+      color: $gold;
+      width: 35px;
+    }
+    .attribute__label {
+      font-size: smaller;
+      text-transform: uppercase;
+    }
   }
 }
