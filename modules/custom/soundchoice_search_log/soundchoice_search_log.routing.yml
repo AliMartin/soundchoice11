@@ -1,0 +1,15 @@
+soundchoice_search_log.report:
+  path: '/admin/reports/soundchoice-searches'
+  defaults:
+    _controller: '\Drupal\soundchoice_search_log\Controller\SearchLogController::report'
+    _title: 'Sound Choice searches'
+  requirements:
+    _permission: 'access site reports'
+
+soundchoice_search_log.clear:
+  path: '/admin/reports/soundchoice-searches/clear'
+  defaults:
+    _form: '\Drupal\soundchoice_search_log\Form\ClearSearchLogForm'
+    _title: 'Clear Sound Choice search log'
+  requirements:
+    _permission: 'access site reports'

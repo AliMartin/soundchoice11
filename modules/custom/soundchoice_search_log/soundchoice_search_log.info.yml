@@ -1,0 +1,8 @@
+name: 'Sound Choice Search Log'
+type: module
+description: 'Logs searches performed through the Sound Choice Artist Search view and provides a simple admin report.'
+package: 'Sound Choice'
+core_version_requirement: ^11
+dependencies:
+  - drupal:views
+  - search_api:search_api

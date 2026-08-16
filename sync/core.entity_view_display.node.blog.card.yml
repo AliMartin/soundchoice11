@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.card
     - field.field.node.blog.field_artist_search_query
     - field.field.node.blog.field_editorial
+    - field.field.node.blog.field_featured_artists
     - field.field.node.blog.field_image
     - node.type.blog
   module:
@@ -22,9 +23,10 @@ bundle: blog
 mode: card
 content:
   field_editorial:
-    type: text_default
+    type: text_summary_or_trimmed
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: 600
     third_party_settings: {  }
     weight: 1
     region: content
@@ -44,4 +46,5 @@ content:
     region: content
 hidden:
   field_artist_search_query: true
+  field_featured_artists: true
   search_api_excerpt: true

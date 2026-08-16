@@ -2,11 +2,19 @@
   display: flex;
   align-items: center;
 
-  min-height: 70vh;
-  padding: 80px 0;
+  min-height: 50vh;
+  padding: 60px 30px;
 
-  background: $body-bg;
+  max-width: 850px;
+  margin: 60px auto;
+  border-radius: $border-radius-xl;
+
+  background: rgba($body-bg, 0.8);
+  border: 1px solid rgba($gold, 0.4);
   color: $text-primary;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  box-shadow: 0px 0px 15px 6px rgba(0,0,0,0.3);
 
   &__inner {
     max-width: 1000px;
@@ -82,11 +90,16 @@
     background: $gold;
     color: $dark;
 
-    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+
 
     &:hover,
     &:focus-visible {
-      background: $gold-light;
+      // background: $gold-light;
+      background: $dark;
+      color: $white;
     }
   }
 
@@ -176,4 +189,22 @@
 .front-content {
   max-width: 800px;
   margin: 0 auto 90px auto;
+}
+
+
+// Video wallpaper
+.video-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the entire area */
 }

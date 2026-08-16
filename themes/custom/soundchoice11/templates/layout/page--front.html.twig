@@ -16,6 +16,13 @@ set footer_classes = ' ' ~
 
 {% include '@soundchoice11/includes/header.html.twig' %}
 
+{# Video wallpaper #}
+{% block video_wallpaper %}
+  {% if page.video_wallpaper %}
+    {{ page.video_wallpaper }}
+  {% endif %}
+{% endblock %}
+
 <main role="main" class="front-page">
 
   <a id="main-content" tabindex="-1"></a>

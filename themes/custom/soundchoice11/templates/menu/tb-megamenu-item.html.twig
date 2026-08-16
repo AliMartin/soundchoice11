@@ -1,0 +1,100 @@
+{% set linkAttributes = link['attributes'] %}
+
+{% if link['url'] is defined and link['url'] is not empty %}
+  {% set tag = 'a' %}
+{% else %}
+  {% set tag = 'span' %}
+
+  {% if submenu is empty %}
+    {% set linkAttributes = linkAttributes.addClass('tbm-no-submenu') %}
+  {% endif %}
+{% endif %}
+
+<li{{ attributes }}>
+
+  {% if section == 'frontend' %}
+    <div class="tbm-link-container">
+  {% endif %}
+
+    {% if tag == 'a' %}
+      <{{ tag }} href="{{ link['url'] }}"{{ linkAttributes }}>
+    {% else %}
+      <{{ tag }}{{ linkAttributes }}>
+    {% endif %}
+
+      {# ==============================================================
+         Sound Choice enriched menu item
+         ============================================================== #}
+
+      {% if menu_icon or menu_description %}
+
+        <span class="sc-menu-item">
+
+          {% if menu_icon %}
+            <span class="sc-menu-item__icon" aria-hidden="true">
+              <i class="fa-light {{ menu_icon }}"></i>
+            </span>
+          {% endif %}
+
+          <span class="sc-menu-item__content">
+
+            <span class="sc-menu-item__title">
+              {{ link.title_translate }}
+            </span>
+
+            {% if menu_description %}
+              <span class="sc-menu-item__description">
+                {{ menu_description }}
+              </span>
+            {% endif %}
+
+          </span>
+
+          <span class="sc-menu-item__arrow" aria-hidden="true">
+            <i class="fa-light fa-chevron-right"></i>
+          </span>
+
+        </span>
+
+      {% else %}
+
+        {# ============================================================
+           Standard TB Mega Menu rendering
+           ============================================================ #}
+
+        {% if fontawesome and item_config['xicon'] %}
+          <span class="{{ item_config['xicon'] }}"></span>
+        {% endif %}
+
+        {{ link.title_translate }}
+
+        {% if item_config['caption'] %}
+          {% autoescape %}
+            <span class="tbm-caption">
+              {{ item_config['caption']|raw }}
+            </span>
+          {% endautoescape %}
+        {% endif %}
+
+      {% endif %}
+
+    </{{ tag }}>
+
+  {% if section == 'frontend' %}
+
+      {% if submenu and not group %}
+        <button
+          class="tbm-submenu-toggle{% if block_config['auto-arrow'] %} always-show{% endif %}">
+          <span class="visually-hidden">
+            {{ 'Toggle submenu'|t }}
+          </span>
+        </button>
+      {% endif %}
+
+    </div>
+
+  {% endif %}
+
+  {{ submenu }}
+
+</li>

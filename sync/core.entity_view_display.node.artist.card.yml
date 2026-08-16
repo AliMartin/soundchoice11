@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.artist.field_price_from
     - field.field.node.artist.field_profile_image
     - field.field.node.artist.field_promotional_videos
+    - field.field.node.artist.field_search_keywords
     - field.field.node.artist.field_slogan
     - field.field.node.artist.field_suitable_for
     - field.field.node.artist.field_summary
@@ -80,6 +81,7 @@ hidden:
   field_number_of_musicians: true
   field_price_from: true
   field_promotional_videos: true
+  field_search_keywords: true
   field_slogan: true
   field_suitable_for: true
   field_tracking_identifier: true

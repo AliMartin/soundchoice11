@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * @file
+ * Logs anonymous searches from the Sound Choice Artist Search view.
+ */
+
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_views_post_execute().
+ */
+function soundchoice_search_log_views_post_execute(ViewExecutable $view): void {
+  if ($view->id() !== 'artist_search') {
+    return;
+  }
+
+  // Do not log searches performed by users who can access site reports.
+  // This keeps administrator/testing searches out of the analytics data.
+  if (\Drupal::currentUser()->hasPermission('access site reports')) {
+    return;
+  }
+
+  $request = \Drupal::requestStack()->getCurrentRequest();
+  if (!$request) {
+    return;
+  }
+
+  $search_term = trim((string) $request->query->get('search', ''));
+  if ($search_term === '') {
+    return;
+  }
+
+  static $logged = [];
+  $request_key = hash('sha256', $view->id() . '|' . $search_term);
+
+  if (isset($logged[$request_key])) {
+    return;
+  }
+  $logged[$request_key] = TRUE;
+
+  $result_count = $view->total_rows;
+  if ($result_count === NULL) {
+    $result_count = count($view->result);
+  }
+
+  $search_term = mb_substr($search_term, 0, 500);
+
+  \Drupal::database()
+    ->insert('soundchoice_search_log')
+    ->fields([
+      'search_term' => $search_term,
+      'result_count' => max(0, (int) $result_count),
+      'created' => \Drupal::time()->getRequestTime(),
+    ])
+    ->execute();
+}

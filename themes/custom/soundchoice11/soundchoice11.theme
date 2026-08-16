@@ -23,7 +23,7 @@ function soundchoice11_preprocess_block(array &$variables): void {
 
   if (
     $node instanceof NodeInterface &&
-    in_array($node->bundle(), ['artist', 'blog'], TRUE)
+    in_array($node->bundle(), ['artist', 'blog', 'landing'], TRUE)
   ) {
     $variables['content'] = [];
   }
@@ -128,3 +128,67 @@ function soundchoice11_preprocess_node(array &$variables): void {
     }
   }
 }
+
+
+
+  /*
+   * --------------------------------------------------------------------------
+   * However, there’s an important wrinkle: TB Mega Menu itself only knows about its own item variables.
+   * Menu Item Extras keeps the extra fields on the underlying menu_link_content entity.
+   * Its maintainers explicitly note that the full entity is available in Menu Item Extras contexts
+   * as item.entity, but TB Mega Menu does not automatically render those fields into its own item template.  
+   * So I’d bridge the two in preprocess.
+   * --------------------------------------------------------------------------
+   */
+
+  /**
+  * Implements hook_preprocess_HOOK() for tb_megamenu_item.
+  */
+  function soundchoice11_preprocess_tb_megamenu_item(array &$variables): void {
+    $variables['menu_icon'] = NULL;
+    $variables['menu_description'] = NULL;
+
+    $item = $variables['item'] ?? NULL;
+
+    if (!$item || empty($item->link)) {
+      return;
+    }
+
+    $plugin_id = $item->link->getPluginId();
+
+    if (!str_starts_with($plugin_id, 'menu_link_content:')) {
+      return;
+    }
+
+    $uuid = substr($plugin_id, strlen('menu_link_content:'));
+
+    $entities = \Drupal::entityTypeManager()
+      ->getStorage('menu_link_content')
+      ->loadByProperties([
+        'uuid' => $uuid,
+      ]);
+
+    $menu_link = reset($entities);
+
+    if (!$menu_link) {
+      return;
+    }
+
+    if (
+      $menu_link->hasField('field_menu_icon') &&
+      !$menu_link->get('field_menu_icon')->isEmpty()
+    ) {
+      $variables['menu_icon'] = $menu_link
+        ->get('field_menu_icon')
+        ->value;
+    }
+
+    if (
+      $menu_link->hasField('field_menu_description') &&
+      !$menu_link->get('field_menu_description')->isEmpty()
+    ) {
+      $variables['menu_description'] = $menu_link
+        ->get('field_menu_description')
+        ->value;
+    }
+  }

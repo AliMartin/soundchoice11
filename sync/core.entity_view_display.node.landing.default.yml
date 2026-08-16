@@ -1,0 +1,50 @@
+uuid: e4a2d182-1f7c-4c31-8867-3afccdba3c98
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.node.landing.field_artist_search_query
+    - field.field.node.landing.field_editorial
+    - field.field.node.landing.field_featured_artists
+    - field.field.node.landing.field_image
+    - node.type.landing
+  module:
+    - text
+    - user
+id: node.landing.default
+targetEntityType: node
+bundle: landing
+mode: default
+content:
+  field_editorial:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_featured_artists:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: profile_image
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_artist_search_query: true
+  search_api_excerpt: true

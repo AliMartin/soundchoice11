@@ -1,0 +1,20 @@
+uuid: c3d7cbe2-977f-4f67-ab1a-4add124196d1
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - tb_megamenu
+  theme:
+    - soundchoice11
+id: soundchoice11_mainnavigation
+theme: soundchoice11
+region: nav_main
+weight: 0
+provider: null
+plugin: 'tb_megamenu_menu_block:main'
+settings:
+  id: 'tb_megamenu_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: tb_megamenu
+visibility: {  }

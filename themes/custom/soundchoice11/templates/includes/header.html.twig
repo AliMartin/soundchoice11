@@ -1,29 +1,29 @@
-<header role="banner">
+<header role="banner" class="site-header">
+
   {{ page.header }}
 
-  {% if page.nav_branding or page.nav_main or page.nav_additional %}
-  <nav class="{{ nav_classes }}">
-    <div class="{{ b5_top_container }} d-flex">
-
-      {% if page.nav_branding %}
+  {% if page.nav_branding %}
+    <div class="site-header__branding">
+      <div class="{{ b5_top_container }}">
         {{ page.nav_branding }}
-      {% endif %}
+      </div>
+    </div>
+  {% endif %}
 
 
-      {% if page.nav_main or page.nav_additional %}
-        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  {% if page.nav_main or page.nav_additional %}
+    <nav class="{{ nav_classes }} site-header__nav">
 
-        <div class="collapse navbar-collapse justify-content-md-end" id="navbarSupportedContent">
+      <div class="{{ b5_top_container }} site-header__nav-inner">
+
+        <div class="site-header__menu">
           {{ page.nav_main }}
           {{ page.nav_additional }}
         </div>
-      {% endif %}
-    </div>
-  </nav>
+
+      </div>
+
+    </nav>
   {% endif %}
 
 </header>

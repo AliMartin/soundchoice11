@@ -20,7 +20,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Artist contextual search'
+      title: 'Artist search'
       fields:
         title_1:
           id: title_1
@@ -97,6 +97,63 @@ display:
             delta_offset: 0
             delta_reversed: false
             delta_first_last: false
+        search_api_relevance:
+          id: search_api_relevance
+          table: search_api_index_artist_search
+          field: search_api_relevance
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: numeric
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          set_precision: false
+          precision: 0
+          decimal: .
+          separator: ','
+          format_plural: false
+          format_plural_string: !!binary MQNAY291bnQ=
+          prefix: ''
+          suffix: ''
       pager:
         type: some
         options:
@@ -105,7 +162,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Search
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -118,7 +175,18 @@ display:
       cache:
         type: search_api_tag
         options: {  }
-      empty: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: "<div class=\"artist-search-results__empty\">\r\n  <h2>We couldn't find the right match</h2>\r\n\r\n  <p>\r\n    We only show acts we genuinely think are relevant to your search, rather than filling the page with loosely matched results.\r\n  </p>\r\n\r\n  <p>\r\n    Try a different search, or\r\n    <a href=\"/contact\">get in touch</a>\r\n    and tell us what you're looking for. We may still be able to help.\r\n  </p>\r\n</div>"
+          tokenize: false
       sorts:
         search_api_relevance:
           id: search_api_relevance
@@ -149,7 +217,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'Fulltext search'
+            label: 'What are you looking for?'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -198,7 +266,18 @@ display:
           preserve_facet_query_args: false
           query_tags: {  }
       relationships: {  }
-      header: {  }
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: "<div class=\"artist-search-results__note\">\r\n  <p>\r\n    We won’t overwhelm you with pages and pages of results. We’ll show you the acts we think are the strongest match for your search.\r\n    If you can’t find what you’re looking for, <a href=\"/contact\">get in touch</a> and we’ll be happy to help.\r\n  </p>\r\n</div>"
+          tokenize: false
       footer: {  }
       display_extenders: {  }
     cache_metadata:

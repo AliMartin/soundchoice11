@@ -11,6 +11,7 @@ ckeditor5-stylesheets:
   - css/ck5style.css
 regions:
   header: Header
+  video_wallpaper: 'Video wallpaper'
   nav_branding: 'Navigation branding region'
   nav_main: 'Main navigation region'
   nav_additional: 'Additional navigation region (eg search form, social icons, etc)'

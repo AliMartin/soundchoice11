@@ -31,15 +31,6 @@
       </a>
     </h2>
 
-    {#
-    {% if not node.field_tribute_to.isEmpty() %}
-      <div class="artist-card__tribute">
-        <label>Tribute to</label>
-        {{ content.field_tribute_to }}
-      </div>
-    {% endif %}
-    #}
-
     {% if not node.field_summary.isEmpty() %}
       <div class="artist-card__summary">
         {{ content.field_summary }}

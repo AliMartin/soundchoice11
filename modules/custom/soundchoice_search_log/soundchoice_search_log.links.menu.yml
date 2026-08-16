@@ -1,0 +1,6 @@
+soundchoice_search_log.report:
+  title: 'Sound Choice searches'
+  description: 'Review Artist Search phrases and result counts.'
+  route_name: soundchoice_search_log.report
+  parent: system.admin_reports
+  weight: 20

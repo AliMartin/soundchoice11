@@ -1,0 +1,24 @@
+uuid: be280bda-74b8-456c-8806-36670c41b4f2
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_editorial
+    - node.type.landing
+  module:
+    - text
+id: node.landing.field_editorial
+field_name: field_editorial
+entity_type: node
+bundle: landing
+label: Editorial
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: true
+  allowed_formats: {  }
+field_type: text_with_summary

@@ -1,0 +1,23 @@
+uuid: fa3550df-9f1a-4e28-9fa5-e5ca9a92d03b
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.landing
+  module:
+    - node
+id: landing
+label: Landing
+type: 'canonical_entities:node'
+pattern: '/[node:title]'
+selection_criteria:
+  dd81776d-b846-48a7-a85f-f30525dfddbb:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      landing: landing
+selection_logic: and
+weight: -5
+relationships: {  }

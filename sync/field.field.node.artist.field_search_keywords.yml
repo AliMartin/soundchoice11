@@ -1,0 +1,19 @@
+uuid: c8e6bafa-7419-4ffc-b61d-2d3344d3be09
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_search_keywords
+    - node.type.artist
+id: node.artist.field_search_keywords
+field_name: field_search_keywords
+entity_type: node
+bundle: artist
+label: 'Search keywords'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

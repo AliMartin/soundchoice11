@@ -1,13 +1,12 @@
-header {
+.site-header {
   position: relative;
+  background: $dark;
 
-  // Fancy gradient bottom border
+  // Fancy gradient bottom border.
   &::after {
     content: "";
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    inset: auto 0 0;
     height: 1px;
 
     background: linear-gradient(
@@ -19,13 +18,60 @@ header {
     );
   }
 
-  nav.navbar {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-}
+  &__branding {
+    padding: 14px 0 0;
+    text-align: center;
 
-#block-soundchoice11-branding {
+    .region-nav-branding {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__nav {
+    min-height: 44px;
+    padding: 0;
+  }
+
+  &__nav-inner {
+    position: relative;
+  }
+
+  &__menu,
+  .navbar-collapse,
+  .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__menu {
+    width: 100%;
+  }
+
+  .nav {
+    gap: 32px;
+  }
+
+  .nav-link {
+    padding: 10px 0;
+    color: $text-primary;
+
+    font-size: .95rem;
+    font-weight: 500;
+    letter-spacing: .04em;
+
+    &:hover,
+    &:focus,
+    &.active {
+      color: $gold;
+    }
+  }
+
+  .navbar-brand,
+  .site-branding {
+    margin: 0;
+  }
 
   .navbar-brand {
     font-family: $headings-font-family;
@@ -34,7 +80,9 @@ header {
     a {
       text-decoration: none;
       outline: none;
-      &:hover {
+
+      &:hover,
+      &:focus {
         text-decoration: none;
       }
     }
@@ -42,20 +90,64 @@ header {
     .site-title {
       font-weight: 200;
       letter-spacing: 5px;
-      .site-title-sound {
+
+      &-sound {
         color: $white;
       }
-      .site-title-choice {
+
+      &-choice {
         color: $gold;
       }
     }
 
     .site-slogan {
+      display: block !important;
       font-size: x-small;
       color: $white;
       letter-spacing: 2px;
       text-align: center;
     }
+  }
+}
 
+
+@media (max-width: 991.98px) {
+  .site-header {
+    &__branding {
+      padding: 12px 0;
+    }
+
+    &__nav {
+      min-height: 48px;
+    }
+
+    &__nav-inner {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__menu {
+      display: block;
+      width: 100%;
+      padding: 10px 0 10px;
+    }
+
+    .navbar-toggler {
+      margin: 6px 0;
+    }
+
+    .navbar-collapse {
+      width: 100%;
+      display: block;
+    }
+
+    .nav {
+      display: block;
+    }
+
+    .nav-link {
+      padding: 10px 0;
+      text-align: center;
+    }
   }
 }

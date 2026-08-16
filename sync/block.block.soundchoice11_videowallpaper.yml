@@ -1,0 +1,28 @@
+uuid: a7298911-84b0-414a-9c5d-7afcd20d2a44
+langcode: en-gb
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:ebd6cbaf-ec06-4cb4-9449-00d166c0755b'
+  module:
+    - block_content
+    - system
+  theme:
+    - soundchoice11
+id: soundchoice11_videowallpaper
+theme: soundchoice11
+region: video_wallpaper
+weight: 0
+provider: null
+plugin: 'block_content:ebd6cbaf-ec06-4cb4-9449-00d166c0755b'
+settings:
+  id: 'block_content:ebd6cbaf-ec06-4cb4-9449-00d166c0755b'
+  label: 'Video wallpaper'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

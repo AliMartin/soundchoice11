@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.blog.field_artist_search_query
     - field.field.node.blog.field_editorial
+    - field.field.node.blog.field_featured_artists
     - field.field.node.blog.field_image
     - node.type.blog
   module:
@@ -38,4 +39,5 @@ content:
     region: content
 hidden:
   field_artist_search_query: true
+  field_featured_artists: true
   search_api_excerpt: true

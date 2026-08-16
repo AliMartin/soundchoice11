@@ -1,0 +1,23 @@
+uuid: 51e251bc-9295-4220-b111-fda6600bab08
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.artist
+  module:
+    - node
+id: artists
+label: Artists
+type: 'canonical_entities:node'
+pattern: '/artists/[node:title]'
+selection_criteria:
+  34f623e9-e231-4326-a7e1-d27b62c7e166:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      artist: artist
+selection_logic: and
+weight: -5
+relationships: {  }

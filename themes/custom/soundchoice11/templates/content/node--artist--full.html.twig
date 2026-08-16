@@ -417,4 +417,36 @@
 
   </div>
 
+
+  {# ------------------------------------------------------------------------
+    Related content
+    ------------------------------------------------------------------------ #}
+
+  {% set related_results = drupal_view_result(
+    'related_content_for_artist',
+    'block_1',
+    node.id
+  ) %}
+
+  {% if related_results is not empty %}
+
+    <section class="artist__related-content">
+      <div class="container">
+
+        <div class="artist__related-content-heading">
+          <h2 class="h3">Featured articles</h2>
+        </div>
+
+        {{ drupal_view(
+          'related_content_for_artist',
+          'block_1',
+          node.id
+        ) }}
+
+      </div>
+    </section>
+
+  {% endif %}
+
+
 </article>

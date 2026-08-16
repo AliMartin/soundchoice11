@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.artist.field_price_from
     - field.field.node.artist.field_profile_image
     - field.field.node.artist.field_promotional_videos
+    - field.field.node.artist.field_search_keywords
     - field.field.node.artist.field_slogan
     - field.field.node.artist.field_suitable_for
     - field.field.node.artist.field_summary
@@ -139,6 +140,13 @@ content:
       link: false
     third_party_settings: {  }
     weight: 12
+    region: content
+  field_search_keywords:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 19
     region: content
   field_slogan:
     type: string

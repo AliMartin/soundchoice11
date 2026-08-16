@@ -1,4 +1,5 @@
-.blog-hero {
+.blog-hero,
+.landing-hero {
   position: relative;
   min-height: 55vh;
   display: flex;
@@ -73,7 +74,8 @@
 }
 
 
-.blog-content {
+.blog-content,
+.landing-content {
   padding: 70px 0;
 
   &__body {
@@ -91,14 +93,21 @@
 }
 
 
-.blog-artists {
-  padding: 70px 0;
+.blog-artists,
+.landing-artists {
+  padding: 70px 0 120px 0;
   border-top: 1px solid rgba($gold, .25);
+
+  h2.h3 {
+    margin-bottom: 30px;
+    text-align: center;
+  }
 }
 
 
 @media (max-width: 767.98px) {
-  .blog-hero {
+  .blog-hero,
+  .landing-hero {
     min-height: 0;
     padding: 40px 0;
 
@@ -118,18 +127,21 @@
     }
   }
 
-  .blog-content {
+  .blog-content,
+  .landing-content{
     padding: 50px 0;
   }
 
-  .blog-artists {
+  .blog-artists,
+  .landing-artists {
     padding: 50px 0;
   }
 }
 
 
 @media (max-width: 575.98px) {
-  .blog-hero {
+  .blog-hero,
+  .landing-hero {
     padding: 30px 0;
 
     &__content {
@@ -145,11 +157,69 @@
     }
   }
 
-  .blog-content {
+  .blog-content,
+  .landing-content {
     padding: 40px 0;
   }
 
-  .blog-artists {
+  .blog-artists,
+  .landing-artists {
     padding: 40px 0;
+  }
+}
+
+
+
+.editorial-card {
+  max-width: 360px;
+  border-radius: $border-radius-xl;
+  color: $dark;
+  overflow: hidden;
+
+  &__image {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      transition: transform .3s ease;
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+
+    a {
+      color: $gold;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: $gold;
+      }
+    }
+  }
+
+  &__summary {
+    margin-bottom: 24px;
+    line-height: 1.5;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__cta {
+    padding-top: 10px;
+  }
+
+  &:hover {
+    .editorial-card__image img {
+      transform: scale(1.03);
+    }
   }
 }

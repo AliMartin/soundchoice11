@@ -1,0 +1,38 @@
+uuid: 640e05c3-eee1-4b73-b847-d9e8c40b0335
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.main.field_menu_description
+    - field.field.menu_link_content.main.field_menu_icon
+    - system.menu.main
+id: menu_link_content.main.default
+targetEntityType: menu_link_content
+bundle: main
+mode: default
+content:
+  children:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_menu_description:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_menu_icon:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

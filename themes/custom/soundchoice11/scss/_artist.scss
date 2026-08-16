@@ -381,3 +381,28 @@
     }
   }
 }
+
+
+.artist__related-content {
+
+  h2.h3 {
+    text-align: center;
+  }
+
+  margin-top: 70px;
+  padding: 70px 0;
+
+  border-top: 1px solid rgba($gold, .2);
+
+  &-heading {
+    margin-bottom: 30px;
+  }
+
+  .view-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+}

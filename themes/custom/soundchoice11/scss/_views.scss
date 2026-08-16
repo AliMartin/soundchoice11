@@ -7,3 +7,169 @@
     gap: 30px;
   }
 }
+
+.view-artist-search {
+
+  .view-filters {
+    max-width: 850px;
+    margin: 0 auto 20px;
+  }
+
+  .views-exposed-form {
+    margin: 0 0 60px 0;
+  }
+
+  .form--inline {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  .form-item-search {
+    flex: 1;
+    margin: 0;
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+
+      color: $text-secondary;
+      font-size: .85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+  }
+
+  #edit-search {
+    width: 100%;
+    min-height: 56px;
+    padding: 0 18px;
+
+    border: 1px solid rgba($gold, .45);
+    border-radius: $border-radius-lg;
+
+    background: $dark;
+    color: $text-primary;
+
+    font-size: 1.05rem;
+
+    &::placeholder {
+      color: $text-muted;
+    }
+
+    &:focus {
+      border-color: $gold;
+      background: $dark;
+      color: $text-primary;
+
+      outline: 0;
+      box-shadow: 0 0 0 3px rgba($gold, .08);
+    }
+  }
+
+  .form-actions {
+    margin: 0;
+  }
+
+  #edit-submit-artist-search {
+    min-height: 56px;
+    padding: 0 22px;
+
+    border: 0;
+    border-radius: $border-radius-lg;
+
+    background: $gold;
+    color: $dark;
+
+    font-weight: 600;
+
+    &:hover,
+    &:focus {
+      background: $gold-light;
+      color: $dark;
+    }
+  }
+
+  .view-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+}
+
+
+.artist-search-results__note {
+  max-width: 850px;
+  margin: 0 auto 35px;
+  padding: 14px 16px;
+
+  border-left: 2px solid $gold;
+
+  background: rgba($gold, .05);
+  color: $text-secondary;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: $gold;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+@media (max-width: 575.98px) {
+  .view-artist-search {
+    .form--inline {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .form-actions,
+    #edit-submit-artist-search {
+      width: 100%;
+    }
+  }
+}
+
+
+.artist-search-results__empty {
+  max-width: 760px;
+  margin: 40px auto 0;
+  padding: 30px;
+
+  border-left: 2px solid $gold;
+  background: rgba($gold, .05);
+
+  h2 {
+    margin-bottom: 12px;
+    color: $text-primary;
+  }
+
+  p {
+    color: $text-secondary;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    color: $gold;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}

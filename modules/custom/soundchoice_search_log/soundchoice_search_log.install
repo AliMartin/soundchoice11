@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for Sound Choice Search Log.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function soundchoice_search_log_schema(): array {
+  $schema['soundchoice_search_log'] = [
+    'description' => 'Stores anonymous Artist Search queries and result counts.',
+    'fields' => [
+      'id' => [
+        'description' => 'Primary key.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'search_term' => [
+        'description' => 'The search phrase submitted by the visitor.',
+        'type' => 'varchar',
+        'length' => 500,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'result_count' => [
+        'description' => 'Total number of results returned by the Artist Search view.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'created' => [
+        'description' => 'Unix timestamp when the search was logged.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'created' => ['created'],
+      'result_count' => ['result_count'],
+      'search_term' => ['search_term'],
+    ],
+  ];
+
+  return $schema;
+}

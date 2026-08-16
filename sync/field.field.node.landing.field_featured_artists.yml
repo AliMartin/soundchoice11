@@ -1,0 +1,29 @@
+uuid: 61a58fc2-bedf-4884-bc2b-dd363efe55e1
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured_artists
+    - node.type.artist
+    - node.type.landing
+id: node.landing.field_featured_artists
+field_name: field_featured_artists
+entity_type: node
+bundle: landing
+label: 'Featured artists'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      artist: artist
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
