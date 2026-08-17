@@ -1,0 +1,10 @@
+name: 'Sound Choice Enquiry'
+type: module
+description: 'Adds Artist context and email routing to the shared Sound Choice artist enquiry webform.'
+package: 'Sound Choice'
+core_version_requirement: ^11
+dependencies:
+  - drupal:node
+  - drupal:media
+  - drupal:taxonomy
+  - webform:webform

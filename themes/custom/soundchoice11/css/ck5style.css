@@ -13429,6 +13429,121 @@ a > .ck-content code {
 .ck-content .artist-search-results__empty a:hover, .ck-content .artist-search-results__empty a:focus {
   text-decoration: underline;
 }
+.ck-content .soundchoice-enquiry-form {
+  max-width: 850px;
+  margin: 0 auto;
+}
+.ck-content .soundchoice-enquiry-form .form-item {
+  margin-bottom: 22px;
+}
+.ck-content .soundchoice-enquiry-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #F8F8F6;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.ck-content .soundchoice-enquiry-form .form-required::after {
+  color: #C8A45D;
+}
+.ck-content .soundchoice-enquiry-form .form-control,
+.ck-content .soundchoice-enquiry-form .form-text,
+.ck-content .soundchoice-enquiry-form .form-email,
+.ck-content .soundchoice-enquiry-form .form-tel,
+.ck-content .soundchoice-enquiry-form .form-date,
+.ck-content .soundchoice-enquiry-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(200, 164, 93, 0.3);
+  border-radius: 0.375rem;
+  background: rgba(248, 248, 246, 0.025);
+  color: #F8F8F6;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+.ck-content .soundchoice-enquiry-form .form-control::placeholder,
+.ck-content .soundchoice-enquiry-form .form-text::placeholder,
+.ck-content .soundchoice-enquiry-form .form-email::placeholder,
+.ck-content .soundchoice-enquiry-form .form-tel::placeholder,
+.ck-content .soundchoice-enquiry-form .form-date::placeholder,
+.ck-content .soundchoice-enquiry-form textarea::placeholder {
+  color: #9EA5AC;
+}
+.ck-content .soundchoice-enquiry-form .form-control:hover,
+.ck-content .soundchoice-enquiry-form .form-text:hover,
+.ck-content .soundchoice-enquiry-form .form-email:hover,
+.ck-content .soundchoice-enquiry-form .form-tel:hover,
+.ck-content .soundchoice-enquiry-form .form-date:hover,
+.ck-content .soundchoice-enquiry-form textarea:hover {
+  border-color: rgba(200, 164, 93, 0.5);
+}
+.ck-content .soundchoice-enquiry-form .form-control:focus,
+.ck-content .soundchoice-enquiry-form .form-text:focus,
+.ck-content .soundchoice-enquiry-form .form-email:focus,
+.ck-content .soundchoice-enquiry-form .form-tel:focus,
+.ck-content .soundchoice-enquiry-form .form-date:focus,
+.ck-content .soundchoice-enquiry-form textarea:focus {
+  border-color: #C8A45D;
+  background: rgba(248, 248, 246, 0.04);
+  color: #F8F8F6;
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(200, 164, 93, 0.08);
+}
+.ck-content .soundchoice-enquiry-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+.ck-content .soundchoice-enquiry-form .description {
+  margin-top: 6px;
+  color: #9EA5AC;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+.ck-content .soundchoice-enquiry-form .form-actions {
+  margin-top: 30px;
+}
+.ck-content .soundchoice-enquiry-form .form-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 24px;
+  border: 1px solid #C8A45D;
+  border-radius: 0.375rem;
+  background: #C8A45D;
+  color: #16191D;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.ck-content .soundchoice-enquiry-form .form-submit:hover, .ck-content .soundchoice-enquiry-form .form-submit:focus {
+  background: transparent;
+  color: #C8A45D;
+  transform: translateY(-1px);
+}
+.ck-content .soundchoice-enquiry-form .webform-element-description {
+  color: #9EA5AC;
+}
+.ck-content .soundchoice-enquiry-form .messages {
+  margin-bottom: 25px;
+}
+@media (min-width: 768px) {
+  .ck-content .soundchoice-enquiry-form .artist-enquiry__contact-details,
+  .ck-content .soundchoice-enquiry-form .artist-enquiry__event-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 20px;
+  }
+}
+@media (max-width: 767.98px) {
+  .ck-content .soundchoice-enquiry-form .form-item {
+    margin-bottom: 18px;
+  }
+  .ck-content .soundchoice-enquiry-form .form-submit {
+    width: 100%;
+  }
+}
 .ck-content .homepage-search {
   display: flex;
   align-items: center;

@@ -1,0 +1,158 @@
+<?php
+
+/**
+ * @file
+ * Sound Choice shared Artist enquiry integration.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\media\MediaInterface;
+use Drupal\node\NodeInterface;
+use Drupal\webform\WebformSubmissionInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function soundchoice_enquiry_form_alter(array &$form, FormStateInterface $form_state, string $form_id): void {
+  $form_object = $form_state->getFormObject();
+
+  if (!method_exists($form_object, 'getWebform')) {
+    return;
+  }
+
+  $webform = $form_object->getWebform();
+
+  if (!$webform || $webform->id() !== 'artist_enquiry') {
+    return;
+  }
+
+  $request = \Drupal::requestStack()->getCurrentRequest();
+  $artist_id = $request?->query->get('artist');
+
+  /** @var \Drupal\soundchoice_enquiry\ArtistEnquiryResolver $resolver */
+  $resolver = \Drupal::service('soundchoice_enquiry.artist_resolver');
+  $artist = $resolver->resolve($artist_id);
+
+  if (!$artist instanceof NodeInterface) {
+    return;
+  }
+
+  $form['#attached']['library'][] = 'soundchoice_enquiry/artist_enquiry';
+
+  $context = [
+    '#type' => 'container',
+    '#attributes' => [
+      'class' => ['soundchoice-enquiry-context'],
+    ],
+    '#weight' => -1000,
+  ];
+
+  if (
+    $artist->hasField('field_profile_image') &&
+    !$artist->get('field_profile_image')->isEmpty()
+  ) {
+    $profile_media = $artist->get('field_profile_image')->entity;
+
+    if ($profile_media instanceof MediaInterface) {
+      $view_builder = \Drupal::entityTypeManager()->getViewBuilder('media');
+
+      $context['image'] = [
+        '#type' => 'container',
+        '#attributes' => [
+          'class' => ['soundchoice-enquiry-context__image'],
+        ],
+        'media' => $view_builder->view($profile_media, 'profile_image'),
+      ];
+    }
+  }
+
+  $context['copy'] = [
+    '#type' => 'container',
+    '#attributes' => [
+      'class' => ['soundchoice-enquiry-context__copy'],
+    ],
+    'title' => [
+      '#markup' => '<h2 class="soundchoice-enquiry-context__title">' .
+        t('Enquire about @artist', ['@artist' => $artist->label()]) .
+        '</h2>',
+    ],
+    'intro' => [
+      '#markup' => '<p class="soundchoice-enquiry-context__intro">' .
+        t('Tell us a little about your event and we’ll get your enquiry to the right person.') .
+        '</p>',
+    ],
+  ];
+
+  $form['soundchoice_artist_context'] = $context;
+}
+
+/**
+ * Implements hook_entity_insert().
+ *
+ * Sends the routed email only when a new completed Artist enquiry submission
+ * is first inserted. No Webform email handler is required for this form.
+ */
+function soundchoice_enquiry_entity_insert(EntityInterface $entity): void {
+  if (!$entity instanceof WebformSubmissionInterface) {
+    return;
+  }
+
+  $webform = $entity->getWebform();
+
+  if (!$webform || $webform->id() !== 'artist_enquiry') {
+    return;
+  }
+
+  // Do not email saved drafts.
+  if (method_exists($entity, 'isDraft') && $entity->isDraft()) {
+    return;
+  }
+
+  $data = $entity->getData();
+  $artist_id = $data['artist_id'] ?? NULL;
+
+  /** @var \Drupal\soundchoice_enquiry\ArtistEnquiryResolver $resolver */
+  $resolver = \Drupal::service('soundchoice_enquiry.artist_resolver');
+  $artist = $resolver->resolve($artist_id);
+
+  if (!$artist instanceof NodeInterface) {
+    \Drupal::logger('soundchoice_enquiry')->warning(
+      'Artist enquiry submission @sid could not be routed because Artist ID @artist_id was invalid.',
+      [
+        '@sid' => $entity->id(),
+        '@artist_id' => is_scalar($artist_id) ? (string) $artist_id : 'missing',
+      ],
+    );
+    return;
+  }
+
+  $membership = $resolver->getMembership($artist);
+  $contact_email = $resolver->getContactEmail($artist);
+
+  /** @var \Drupal\soundchoice_enquiry\ArtistEnquiryMailer $mailer */
+  $mailer = \Drupal::service('soundchoice_enquiry.mailer');
+  $mailer->send($entity, $artist, $membership, $contact_email);
+}
+
+/**
+ * Implements hook_mail().
+ */
+function soundchoice_enquiry_mail(string $key, array &$message, array $params): void {
+  if ($key !== 'artist_enquiry') {
+    return;
+  }
+
+  $message['subject'] = (string) ($params['subject'] ?? 'New Sound Choice enquiry');
+  $message['body'][] = (string) ($params['body'] ?? '');
+
+  $from = (string) ($params['from'] ?? '');
+  if ($from !== '') {
+    $message['headers']['From'] = $from;
+  }
+
+  $cc = (string) ($params['cc'] ?? '');
+  if ($cc !== '') {
+    $message['headers']['Cc'] = $cc;
+  }
+}

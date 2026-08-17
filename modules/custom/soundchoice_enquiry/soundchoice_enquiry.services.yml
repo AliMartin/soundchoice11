@@ -1,0 +1,14 @@
+services:
+  soundchoice_enquiry.artist_resolver:
+    class: Drupal\soundchoice_enquiry\ArtistEnquiryResolver
+    arguments:
+      - '@entity_type.manager'
+      - '@current_user'
+
+  soundchoice_enquiry.mailer:
+    class: Drupal\soundchoice_enquiry\ArtistEnquiryMailer
+    arguments:
+      - '@plugin.manager.mail'
+      - '@language_manager'
+      - '@email.validator'
+      - '@logger.factory'

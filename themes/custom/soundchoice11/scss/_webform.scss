@@ -1,0 +1,165 @@
+// -----------------------------------------------------------------------------
+// Sound Choice enquiry forms
+// -----------------------------------------------------------------------------
+
+.soundchoice-enquiry-form {
+  max-width: 850px;
+  margin: 0 auto;
+
+  .form-item {
+    margin-bottom: 22px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+
+    color: $text-primary;
+
+    font-size: .9rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .form-required::after {
+    color: $gold;
+  }
+
+  .form-control,
+  .form-text,
+  .form-email,
+  .form-tel,
+  .form-date,
+  textarea {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid rgba($gold, .3);
+    border-radius: $border-radius;
+
+    background: rgba($light, .025);
+    color: $text-primary;
+
+    font-size: 1rem;
+    line-height: 1.5;
+
+    transition:
+      border-color .2s ease,
+      background .2s ease,
+      box-shadow .2s ease;
+
+    &::placeholder {
+      color: $text-muted;
+    }
+
+    &:hover {
+      border-color: rgba($gold, .5);
+    }
+
+    &:focus {
+      border-color: $gold;
+
+      background: rgba($light, .04);
+      color: $text-primary;
+
+      outline: 0;
+      box-shadow: 0 0 0 3px rgba($gold, .08);
+    }
+  }
+
+  textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+
+  .description {
+    margin-top: 6px;
+
+    color: $text-muted;
+
+    font-size: .82rem;
+    line-height: 1.4;
+  }
+
+  .form-actions {
+    margin-top: 30px;
+  }
+
+  .form-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+    padding: 0 24px;
+
+    border: 1px solid $gold;
+    border-radius: $border-radius;
+
+    background: $gold;
+    color: $dark;
+
+    font-weight: 600;
+
+    transition:
+      background .2s ease,
+      color .2s ease,
+      transform .2s ease;
+
+    &:hover,
+    &:focus {
+      background: transparent;
+      color: $gold;
+
+      transform: translateY(-1px);
+    }
+  }
+
+  .webform-element-description {
+    color: $text-muted;
+  }
+
+  .messages {
+    margin-bottom: 25px;
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// Desktop two-column groups
+// -----------------------------------------------------------------------------
+
+@media (min-width: 768px) {
+  .soundchoice-enquiry-form {
+
+    .artist-enquiry__contact-details,
+    .artist-enquiry__event-details {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 20px;
+    }
+
+    .artist-enquiry__contact-details {
+      // Name + email across first row; telephone naturally begins second row.
+    }
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// Mobile
+// -----------------------------------------------------------------------------
+
+@media (max-width: 767.98px) {
+  .soundchoice-enquiry-form {
+
+    .form-item {
+      margin-bottom: 18px;
+    }
+
+    .form-submit {
+      width: 100%;
+    }
+  }
+}

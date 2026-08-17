@@ -1,0 +1,4 @@
+artist_enquiry:
+  css:
+    theme:
+      css/artist-enquiry.css: {}
