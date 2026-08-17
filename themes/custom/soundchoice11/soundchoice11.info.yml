@@ -9,6 +9,7 @@ ckeditor_stylesheets:
   - css/style.css
 ckeditor5-stylesheets:
   - css/ck5style.css
+  - css/ckeditor.css
 regions:
   header: Header
   video_wallpaper: 'Video wallpaper'

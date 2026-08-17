@@ -1,0 +1,22 @@
+uuid: 7723f053-a88d-4dae-913a-4cb990f97515
+langcode: en-gb
+status: true
+dependencies: {  }
+id: node__artist
+label: 'Content: Artist'
+tags:
+  canonical_url: '[node:url]'
+  description: '[node:field_summary]'
+  og_description: '[node:field_summary]'
+  og_image: '[node:field_profile_image:entity:field_media_image]'
+  og_site_name: '[site:name]'
+  og_title: '[node:title]'
+  og_type: profile
+  og_url: '[node:url]'
+  robots: 'index, follow'
+  title: '[node:title] | Sound Choice'
+  twitter_cards_description: '[node:field_summary]'
+  twitter_cards_image: '[node:field_profile_image:entity:field_media_image]'
+  twitter_cards_site: '@soundchoiceuk'
+  twitter_cards_title: '[node:title]'
+  twitter_cards_type: summary_large_image

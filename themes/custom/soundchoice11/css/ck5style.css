@@ -12616,10 +12616,15 @@ a > .ck-content code {
   position: relative;
   z-index: 1;
   color: #fff;
-  padding: 0 45px 45px 45px;
+  padding: 30px 45px 45px 45px;
   max-width: 720px;
   margin-left: 0;
   margin-right: auto;
+}
+@media (max-width: 767px) {
+  .ck-content .artist-hero__content {
+    padding: 30px 30px 45px 30px;
+  }
 }
 .ck-content .artist-hero__slogan {
   text-transform: uppercase;

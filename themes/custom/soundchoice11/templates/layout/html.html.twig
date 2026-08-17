@@ -38,6 +38,17 @@
 <!DOCTYPE html>
 <html{{ html_attributes.addClass('h-100').setAttribute('data-bs-theme', b5_theme_mode) }}>
   <head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-40PM2FXYRK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-40PM2FXYRK');
+    </script>
+
     <head-placeholder token="{{ placeholder_token }}">
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token }}">

@@ -8,4 +8,16 @@ id: front
 label: 'Front page'
 tags:
   canonical_url: '[site:url]'
+  description: 'Discover hand-picked live bands and entertainment for weddings, parties, corporate events, festivals and venues across the UK.'
+  og_description: 'Discover hand-picked live bands and entertainment for weddings, parties, corporate events, festivals and venues across the UK.'
+  og_site_name: '[site:name]'
+  og_title: 'Live Bands and Entertainment for Events | Sound Choice'
+  og_type: website
+  og_url: '[current-page:url]'
+  robots: 'index, follow'
   shortlink: '[site:url]'
+  title: 'Live Bands and Entertainment for Events | Sound Choice'
+  twitter_cards_description: 'Discover hand-picked live bands and entertainment for weddings, parties, corporate events, festivals and venues across the UK.'
+  twitter_cards_site: '@soundchoiceuk'
+  twitter_cards_title: 'Live Bands and Entertainment for Events | Sound Choice'
+  twitter_cards_type: summary_large_image

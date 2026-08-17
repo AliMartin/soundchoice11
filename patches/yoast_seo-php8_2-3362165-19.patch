@@ -1,0 +1,18 @@
+diff --git a/src/YoastSeoManager.php b/src/YoastSeoManager.php
+index 3b888ec..93cb54d 100644
+--- a/src/YoastSeoManager.php
++++ b/src/YoastSeoManager.php
+@@ -21,6 +21,13 @@ class YoastSeoManager {
+    */
+   protected $moduleHandler;
+ 
++  /**
++   * The Yoast field manager.
++   *
++   * @var \Drupal\yoast_seo\YoastSeoFieldManager
++   */
++  protected $yoast_seo_field_manager;
++
+   /**
+    * Target elements for Javascript.
+    *

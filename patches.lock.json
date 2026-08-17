@@ -1,0 +1,17 @@
+{
+    "_hash": "9c30ab1e26745f144bd80c092a3b7c7d2cd6350ab40d5a94686a8d3876d17777",
+    "patches": {
+        "drupal/yoast_seo": [
+            {
+                "package": "drupal/yoast_seo",
+                "description": "Fix editable SEO title and description - #3560779",
+                "url": "patches/yoast_seo-php8_2-3362165-19.patch",
+                "sha256": "302f133086e655cf27e6f46b03c515315d67944907e65d97736a46416e40fbcd",
+                "depth": 1,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ]
+    }
+}
