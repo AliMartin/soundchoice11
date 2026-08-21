@@ -1,6 +1,6 @@
 uuid: 3a2f30e4-845d-4b95-b9b1-c83a1cff45fc
 langcode: en
-status: open
+status: closed
 dependencies:
   enforced:
     module:

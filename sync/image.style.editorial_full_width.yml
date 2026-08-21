@@ -1,0 +1,15 @@
+uuid: 83811e90-f5e1-492a-9eac-85a0ecc6b292
+langcode: en-gb
+status: true
+dependencies: {  }
+name: editorial_full_width
+label: 'Editorial - full width'
+effects:
+  810b4c90-9a67-40ac-a25f-cb656ca0895a:
+    uuid: 810b4c90-9a67-40ac-a25f-cb656ca0895a
+    id: image_scale
+    weight: 1
+    data:
+      width: 1000
+      height: null
+      upscale: true

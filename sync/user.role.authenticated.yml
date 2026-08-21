@@ -8,6 +8,7 @@ dependencies:
   module:
     - file
     - filter
+    - klaro
     - media
     - search
     - system
@@ -21,6 +22,7 @@ permissions:
   - 'access content'
   - 'delete own files'
   - 'search content'
+  - 'use klaro'
   - 'use text format basic_html'
   - 'use text format webform_default'
   - 'view media'

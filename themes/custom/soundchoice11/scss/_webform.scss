@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 
 .soundchoice-enquiry-form {
-  max-width: 850px;
+  max-width: 650px;
   margin: 0 auto;
 
   .form-item {
@@ -162,4 +162,101 @@
       width: 100%;
     }
   }
+}
+
+
+// -----------------------------------------------------------------------------
+// Webform confirmation
+// -----------------------------------------------------------------------------
+
+.webform-confirmation {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 70px 0 90px;
+
+  .webform-confirmation__message {
+    padding: 45px 50px;
+
+    border: 1px solid rgba($gold, .35);
+    border-radius: $border-radius;
+
+    background: rgba($light, .025);
+  }
+
+  h2 {
+    position: relative;
+
+    margin: 0 0 32px;
+    padding-bottom: 22px;
+
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      width: 55px;
+      height: 2px;
+
+      background: $gold;
+    }
+  }
+
+  p {
+    max-width: 720px;
+    margin-bottom: 18px;
+
+    color: $text-primary;
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .btn {
+    margin-top: 12px;
+  }
+
+  .webform-confirmation__back {
+    margin-top: 20px;
+
+    a {
+      color: $gold;
+      font-size: .9rem;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.webform-confirmation__back {
+  display: none;
+}
+
+
+@media (max-width: 767.98px) {
+
+  .webform-confirmation {
+    padding: 40px 0 60px;
+
+    .webform-confirmation__message {
+      padding: 30px 25px;
+    }
+
+    h2 {
+      margin-bottom: 25px;
+    }
+  }
+
 }

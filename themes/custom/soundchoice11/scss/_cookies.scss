@@ -1,0 +1,340 @@
+// -----------------------------------------------------------------------------
+// Klaro cookie consent - Sound Choice
+// -----------------------------------------------------------------------------
+
+#klaro {
+
+  // ---------------------------------------------------------------------------
+  // Cookie notice + detailed consent modal
+  // ---------------------------------------------------------------------------
+
+  #klaro-cookie-notice,
+  .cm-modal {
+    border: 1px solid rgba($gold, .45);
+    border-radius: $border-radius;
+
+    background: $dark;
+    color: $text-primary;
+
+    box-shadow: 0 18px 45px rgba(#000, .35);
+    outline: none;
+
+    a {
+      color: $gold;
+
+      &:hover,
+      &:focus {
+        color: lighten($gold, 8%);
+      }
+    }
+
+    a.cn-learn-more {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .cn-buttons button {
+      width: inherit;
+    }
+  }
+
+
+  // ---------------------------------------------------------------------------
+  // Brighter notice / modal text
+  // ---------------------------------------------------------------------------
+
+  .cookie-notice,
+  .cookie-modal,
+  .context-notice {
+
+    p,
+    .cn-body,
+    .cm-body,
+    .cm-header,
+    .cm-footer,
+    .cm-list-description {
+      color: $text-primary;
+    }
+  }
+
+  .cookie-notice {
+    .cn-body {
+      color: $text-primary;
+    }
+
+    p {
+      color: $text-primary;
+    }
+  }
+
+  .cookie-modal {
+    .cm-header,
+    .cm-body,
+    .cm-footer {
+      color: $text-primary;
+    }
+  }
+
+
+  // ---------------------------------------------------------------------------
+  // Service / purpose text
+  // ---------------------------------------------------------------------------
+
+  .cookie-modal .cm-list-description,
+  .context-notice .cm-list-description,
+  .cookie-notice .cm-list-description {
+    padding: 0;
+
+    color: $text-secondary;
+
+    font-size: .85em;
+    line-height: 1.5;
+  }
+
+  .cm-purpose,
+  .cm-service {
+    border-color: rgba($gold, .12);
+  }
+
+  .cm-purpose-title,
+  .cm-service-title {
+    color: $text-primary;
+  }
+
+  .cm-list-title {
+    color: $text-primary;
+  }
+
+  .label.cm-list-label {
+    min-height: 20px;
+  }
+
+
+  // ---------------------------------------------------------------------------
+  // Buttons - general
+  // ---------------------------------------------------------------------------
+
+  button {
+    border-radius: $border-radius;
+
+    font-weight: 600;
+
+    transition:
+      background .2s ease,
+      border-color .2s ease,
+      color .2s ease,
+      box-shadow .2s ease;
+  }
+
+
+  // ---------------------------------------------------------------------------
+  // Primary buttons - Accept / Accept selected
+  // ---------------------------------------------------------------------------
+
+  .cm-btn-success,
+  .cm-btn-accept,
+  .cm-btn-accept-all {
+    border: 1px solid $gold;
+    border-radius: $border-radius;
+
+    background: $gold;
+    color: $dark;
+
+    box-shadow: none;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      border-color: $gold;
+      background: transparent;
+      color: $gold;
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 2px rgba($gold, .3);
+    }
+  }
+
+
+  // ---------------------------------------------------------------------------
+  // Secondary buttons - Decline
+  // ---------------------------------------------------------------------------
+
+  .cm-btn-danger,
+  .cm-btn-decline,
+  .cm-btn-decline-all,
+  .cn-decline {
+    border: 1px solid rgba($gold, .55) !important;
+    border-radius: $border-radius !important;
+
+    background: transparent !important;
+    color: $text-primary !important;
+
+    box-shadow: none;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      border-color: $gold !important;
+      background: rgba($gold, .08) !important;
+      color: $gold !important;
+    }
+
+    &:focus-visible {
+      border-color: $gold !important;
+      background: rgba($gold, .08) !important;
+      color: $gold !important;
+      box-shadow: 0 0 0 2px rgba($gold, .3);
+    }
+  }
+
+
+  // ---------------------------------------------------------------------------
+  // Consent switches
+  // ---------------------------------------------------------------------------
+
+  .cm-list-input {
+
+    + .cm-list-label {
+
+      .slider {
+        border: 1px solid rgba($gold, .25);
+
+        background-color: rgba($text-secondary, .45);
+
+        box-shadow: none;
+        outline: none;
+
+        &::before {
+          background-color: $white;
+        }
+      }
+    }
+
+    &:checked + .cm-list-label {
+
+      .slider {
+        border-color: $gold;
+
+        background-color: $gold;
+
+        box-shadow: none;
+      }
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:focus-visible + .cm-list-label {
+
+      .slider {
+        box-shadow: 0 0 0 2px rgba($gold, .35);
+      }
+    }
+  }
+
+
+  // Defensive reset against Klaro/browser blue focus styling.
+  .cm-list-label,
+  .cm-list-label:focus,
+  .cm-list-label:focus-visible,
+  .slider,
+  .slider:focus,
+  .slider:focus-visible {
+    outline: none;
+  }
+
+
+  // ---------------------------------------------------------------------------
+  // Close button
+  // ---------------------------------------------------------------------------
+
+  button.hide {
+    border: 1px solid rgba($gold, .45);
+    border-radius: 50%;
+
+    background-color: transparent;
+
+    box-shadow: none;
+    outline: none;
+
+    svg {
+      stroke: $text-primary;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $gold;
+
+      background: rgba($gold, .06);
+
+      svg {
+        stroke: $gold;
+      }
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 2px rgba($gold, .3);
+    }
+  }
+
+
+  // ---------------------------------------------------------------------------
+  // Initial popup-specific text
+  // ---------------------------------------------------------------------------
+
+  #klaro-cookie-notice {
+
+    .cn-body {
+      color: $text-primary;
+    }
+
+    .cn-ok,
+    .cn-decline,
+    .cn-learn-more {
+      color: inherit;
+    }
+
+    strong {
+      color: $text-primary;
+    }
+  }
+
+
+  // ---------------------------------------------------------------------------
+  // Detailed modal-specific text
+  // ---------------------------------------------------------------------------
+
+  .cookie-modal {
+
+    .cm-header {
+
+      h1,
+      h2,
+      h3,
+      p {
+        color: $text-primary;
+      }
+    }
+
+    .cm-body {
+
+      p,
+      span,
+      strong,
+      label {
+        color: $text-primary;
+      }
+
+      .cm-list-description {
+        color: $text-secondary;
+      }
+    }
+
+    .cm-footer {
+      color: $text-primary;
+    }
+  }
+}

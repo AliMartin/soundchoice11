@@ -1,0 +1,10 @@
+uuid: f27f1f94-c4d9-4db5-9469-cd854fc58d59
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 3j5wXqDkwDxjQzmBncu4QboNV0z9hzVwJug3j5IpigQ
+id: cms
+label: Functional
+description: ''
+weight: -1

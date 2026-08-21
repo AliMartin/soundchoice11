@@ -30,6 +30,7 @@
         "drupal/gin": "^5.0",
         "drupal/glightbox": "^1.0",
         "drupal/honeypot": "^2.2",
+        "drupal/klaro": "^3.1",
         "drupal/menu_item_extras": "^3.1",
         "drupal/pathauto": "^1.15",
         "drupal/responsive_favicons": "^4.0",

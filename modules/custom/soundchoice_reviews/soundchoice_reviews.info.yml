@@ -1,0 +1,7 @@
+name: 'Sound Choice Reviews'
+type: module
+description: 'Prevents public canonical access to Review nodes while allowing reviews to render in Views and other entity displays.'
+package: 'Sound Choice'
+core_version_requirement: ^11
+dependencies:
+  - drupal:node

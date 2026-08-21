@@ -9,6 +9,7 @@ artist-video:
   js:
     js/vendor/plyr.js: {}
     js/artist-video.js: {}
+    js/artist-reviews.js: {}
   dependencies:
     - core/drupal
     - core/once

@@ -1,0 +1,60 @@
+uuid: a51996a1-afb3-4cfb-923f-e7eefb6ad66c
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.review.field_artist
+    - field.field.node.review.field_review
+    - field.field.node.review.field_reviewer_name
+    - field.field.node.review.field_venue
+    - node.type.review
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.review.card
+targetEntityType: node
+bundle: review
+mode: card
+content:
+  field_artist:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_review:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_reviewer_name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_venue:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  links: true
+  search_api_excerpt: true

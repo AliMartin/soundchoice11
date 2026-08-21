@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Review card view mode.
+ */
+#}
+
+{%
+  set classes = [
+    'review-card',
+    'h-100',
+  ]
+%}
+
+<article{{ attributes.addClass(classes) }}>
+
+  <div class="review-card__quote">
+    <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+  </div>
+
+  {% if not node.field_review.isEmpty() %}
+    <div class="review-card__text">
+      {{ content.field_review }}
+    </div>
+  {% endif %}
+
+  <footer class="review-card__footer">
+
+    {% if not node.field_reviewer_name.isEmpty() %}
+      <div class="review-card__reviewer">
+        {{ node.field_reviewer_name.value }}
+      </div>
+    {% endif %}
+
+    {% if not node.field_venue.isEmpty() %}
+      <div class="review-card__meta">
+        {{ node.field_venue.value }}
+      </div>
+    {% endif %}
+
+  </footer>
+
+</article>

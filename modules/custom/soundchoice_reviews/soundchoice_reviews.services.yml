@@ -1,0 +1,5 @@
+services:
+  soundchoice_reviews.review_canonical_subscriber:
+    class: Drupal\soundchoice_reviews\EventSubscriber\ReviewCanonicalSubscriber
+    tags:
+      - { name: event_subscriber }

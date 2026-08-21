@@ -6,8 +6,8 @@ name: 'Sound Choice'
 mail: noreply@soundchoice.co.uk
 slogan: 'Carefully selected live music'
 page:
-  403: ''
-  404: ''
+  403: /access-denied
+  404: /page-not-found
   front: /node
 admin_compact_mode: false
 weight_select_max: 100

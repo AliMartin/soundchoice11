@@ -1,0 +1,22 @@
+uuid: c3f2e91c-aac0-40c1-b40c-02ea03d62e70
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_review
+    - node.type.review
+  module:
+    - text
+id: node.review.field_review
+field_name: field_review
+entity_type: node
+bundle: review
+label: Review
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

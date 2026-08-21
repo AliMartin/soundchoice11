@@ -1,0 +1,59 @@
+.review-card {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 260px;
+  padding: 28px;
+
+  border: 1px solid rgba($gold, .12);
+  border-radius: $border-radius;
+
+  background: rgba($light, .025);
+
+  &__quote {
+    margin-bottom: 18px;
+
+    color: $gold;
+
+    i {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__text {
+    flex: 1;
+
+    color: $text-primary;
+
+    font-size: 1rem;
+    line-height: 1.65;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__footer {
+    margin-top: 26px;
+    padding-top: 18px;
+
+    border-top: 1px solid rgba($gold, .1);
+  }
+
+  &__reviewer {
+    color: $text-primary;
+
+    font-size: .85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+
+  &__meta {
+    margin-top: 4px;
+
+    color: $text-secondary;
+
+    font-size: .78rem;
+  }
+}

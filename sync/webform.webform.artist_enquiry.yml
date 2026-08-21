@@ -69,7 +69,7 @@ settings:
   form_open_message: ''
   form_close_message: ''
   form_exception_message: ''
-  form_previous_submissions: true
+  form_previous_submissions: false
   form_confidential: false
   form_confidential_message: ''
   form_disable_remote_addr: false
@@ -159,10 +159,10 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: page
+  confirmation_type: message
   confirmation_url: ''
-  confirmation_title: ''
-  confirmation_message: ''
+  confirmation_title: 'Thank you for your enquiry'
+  confirmation_message: '<p>We''ve received your enquiry and will make sure it reaches the right person.</p><p>You''ll hear back as soon as possible. A copy of your enquiry may also be sent to you for your records.</p><p><a class="btn btn-primary" href="/">Return to Sound Choice</a></p>'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
@@ -261,12 +261,12 @@ handlers:
       cc_options: {  }
       from_mail: noreply@soundchoice.co.uk
       from_options: {  }
-      from_name: '* Sound Choice *'
+      from_name: '* Sound Choice website *'
       reply_to: ''
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: 'New Sound Choice enquiry for [webform_submission:values:artist:raw]'
+      subject: '* New Sound Choice enquiry for [webform_submission:values:artist:raw] *'
       body: _default
       excluded_elements: {  }
       ignore_access: false
@@ -302,12 +302,12 @@ handlers:
       cc_options: {  }
       from_mail: noreply@soundchoice.co.uk
       from_options: {  }
-      from_name: '* Sound Choice *'
+      from_name: '* Sound Choice website *'
       reply_to: ''
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: 'New Sound Choice enquiry for [webform_submission:values:artist:raw]'
+      subject: '* New Sound Choice enquiry for [webform_submission:values:artist:raw] *'
       body: _default
       excluded_elements: {  }
       ignore_access: false

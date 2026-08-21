@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * Blog card view mode.
+ */
+#}
+
+{%
+  set classes = [
+    'blog-card',
+    'card',
+    'h-100',
+  ]
+%}
+
+<article{{ attributes.addClass(classes) }}>
+
+  {% if content.field_image %}
+    <div class="blog-card__image">
+      <a href="{{ url }}" aria-label="Read {{ node.label }}">
+        {{ content.field_image }}
+      </a>
+    </div>
+  {% endif %}
+
+  <div class="blog-card__body">
+
+    <h2 class="blog-card__title">
+      <a href="{{ url }}">
+        {{ node.label }}
+      </a>
+    </h2>
+
+    {% if node.field_editorial.0.summary %}
+      <div class="blog-card__summary">
+        {{ node.field_editorial.0.summary_processed }}
+      </div>
+    {% endif %}
+
+    <div class="blog-card__cta">
+      <a href="{{ url }}" class="blog-card__read-more">
+        <span>Read more</span>
+        <i class="fa-light fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+
+  </div>
+
+</article>

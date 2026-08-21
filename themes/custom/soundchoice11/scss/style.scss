@@ -12,26 +12,22 @@
 @import '../../../../themes/contrib/bootstrap5/scss/style';
 
 
-
-@import 'normalize';
+@import 'node';
 @import 'links';
 @import 'buttons';
 @import 'header';
 @import 'footer';
-@import 'node';
 @import 'artist';
 @import 'blog';
+@import 'review';
 @import 'plyr';
 @import 'gallery';
-// @import 'ios-fixed-bg';
 @import 'views';
 @import 'webform';
 @import 'front';
 @import 'pricing';
-// @import 'curator';
-@import 'menu_desktop';
-@import 'menu_mobile';
-// @import 'maintenance';
+@import 'menu';
+@import 'maintenance';
 @import 'cookies';
 @import 'maintenance';
 

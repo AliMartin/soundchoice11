@@ -2,13 +2,16 @@ uuid: 2620195f-42ab-48af-8ec4-7fecc716ccbb
 langcode: en-gb
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.media.editorial_full_width
   module:
     - editor
+    - media
 _core:
   default_config_hash: vpZysv3RHJjhYzq7O_q5q8mVlHdrSzKELmXyiX6RtV0
 name: 'Full HTML'
 format: full_html
-weight: 2
+weight: -10
 filters:
   editor_file_reference:
     id: editor_file_reference
@@ -28,6 +31,15 @@ filters:
     status: true
     weight: 9
     settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: false
+    weight: -10
+    settings:
+      allowed_html: ''
+      filter_html_help: true
+      filter_html_nofollow: false
   filter_htmlcorrector:
     id: filter_htmlcorrector
     provider: filter
@@ -40,3 +52,15 @@ filters:
     status: true
     weight: 15
     settings: {  }
+  media_embed:
+    id: media_embed
+    provider: media
+    status: true
+    weight: 100
+    settings:
+      default_view_mode: editorial_full_width
+      allowed_view_modes: {  }
+      allowed_media_types:
+        image: image
+        remote_video: remote_video
+        video: video

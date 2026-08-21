@@ -6,9 +6,12 @@
 
 
 nav.tabs {
+  ul {
+    justify-content: center;
+  }
   li.nav-item.active {
     a {
-      color: $white;
+      color: $text-primary;
     }
   }
 }
@@ -18,7 +21,7 @@ main {
 }
 
 
-.path-artist-search h1 {
+h1 {
   text-align: center;
   margin: 30px auto 30px auto;
 }

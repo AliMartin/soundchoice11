@@ -419,6 +419,57 @@
   </div>
 
 
+
+  {# ------------------------------------------------------------------------
+   Reviews
+   ------------------------------------------------------------------------ #}
+
+  {% set artist_reviews = drupal_view_result(
+    'reviews_for_artist',
+    'block_1',
+    node.id
+  ) %}
+
+  {% if artist_reviews|length %}
+
+    <section class="artist-reviews">
+
+      <div class="artist-reviews__header">
+
+        <h2>What people say about {{ label }}</h2>
+
+        <div class="artist-reviews__navigation">
+          <button
+            class="artist-reviews__nav artist-reviews__nav--previous"
+            type="button"
+            aria-label="Previous reviews">
+            <i class="fa-light fa-arrow-left"></i>
+          </button>
+
+          <button
+            class="artist-reviews__nav artist-reviews__nav--next"
+            type="button"
+            aria-label="More reviews">
+            <i class="fa-light fa-arrow-right"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <div class="artist-reviews__content">
+        {{ drupal_view(
+          'reviews_for_artist',
+          'block_1',
+          node.id
+        ) }}
+      </div>
+
+    </section>
+
+  {% endif %}
+
+
+
   {# ------------------------------------------------------------------------
     Related content
     ------------------------------------------------------------------------ #}

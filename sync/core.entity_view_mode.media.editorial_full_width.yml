@@ -1,0 +1,11 @@
+uuid: 4afd4856-1913-4e38-ba9a-443e98dc66fc
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - media
+id: media.editorial_full_width
+label: 'Editorial - full width'
+description: null
+targetEntityType: media
+cache: true
