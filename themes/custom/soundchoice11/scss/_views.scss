@@ -478,3 +478,316 @@
     font-size: 1rem;
   }
 }
+
+
+
+
+// -----------------------------------------------------------------------------
+// All acts listing
+// -----------------------------------------------------------------------------
+
+.view-all-acts {
+
+  // ---------------------------------------------------------------------------
+  // Intro
+  // ---------------------------------------------------------------------------
+
+  .view-header {
+    max-width: 760px;
+    margin: 0 auto 30px;
+
+    color: $text-secondary;
+    text-align: center;
+
+    p {
+      margin: 0;
+
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+  }
+
+
+  // ---------------------------------------------------------------------------
+  // Exposed filters
+  // ---------------------------------------------------------------------------
+
+  .view-filters {
+    margin-bottom: 45px;
+    padding: 26px;
+
+    border: 1px solid rgba($gold, .18);
+    border-radius: $border-radius-xl;
+
+    background: $dark;
+  }
+
+  .views-exposed-form {
+
+    .form--inline {
+      display: grid;
+      grid-template-columns:
+        minmax(150px, .9fr)
+        minmax(150px, .9fr)
+        minmax(240px, 1.6fr)
+        minmax(170px, 1fr)
+        auto;
+
+      align-items: end;
+      gap: 16px;
+    }
+
+    .form-item,
+    .form-actions {
+      float: none;
+      margin: 0;
+    }
+
+    label {
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: $text-primary;
+
+      font-size: .8rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .form-control,
+    .form-select {
+      width: 100%;
+      min-height: 46px;
+      padding: 10px 13px;
+
+      border: 1px solid rgba($gold, .22);
+      border-radius: $border-radius;
+
+      background-color: rgba($light, .03);
+      color: $text-primary;
+
+      box-shadow: none;
+
+      &:focus {
+        border-color: $gold;
+
+        box-shadow: 0 0 0 2px rgba($gold, .16);
+      }
+    }
+
+    select {
+      color-scheme: dark;
+    }
+
+    .form-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-submit {
+      min-height: 46px;
+      padding: 10px 18px;
+
+      border: 1px solid $gold;
+      border-radius: $border-radius;
+
+      background: $gold;
+      color: $dark;
+
+      font-size: .78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+
+      transition:
+        background .2s ease,
+        border-color .2s ease,
+        color .2s ease;
+
+      &:hover,
+      &:focus-visible {
+        background: transparent;
+        color: $gold;
+      }
+    }
+
+    // Views reset button.
+    input[value="Reset"],
+    .form-reset {
+      border-color: rgba($gold, .4);
+
+      background: transparent;
+      color: $text-primary;
+
+      &:hover,
+      &:focus-visible {
+        border-color: $gold;
+
+        background: rgba($gold, .06);
+        color: $gold;
+      }
+    }
+  }
+
+
+  // ---------------------------------------------------------------------------
+  // Artist cards grid
+  // ---------------------------------------------------------------------------
+
+  .view-content {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+
+    align-items: stretch;
+  }
+
+  .views-row {
+    min-width: 0;
+
+    .artist-card {
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+
+  // ---------------------------------------------------------------------------
+  // Pager
+  // ---------------------------------------------------------------------------
+
+  .pager {
+    margin-top: 50px;
+  }
+
+  .pager__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  .pager__item {
+    margin: 0;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      min-width: 42px;
+      height: 42px;
+      padding: 0 12px;
+
+      border: 1px solid rgba($gold, .25);
+      border-radius: $border-radius;
+
+      background: transparent;
+      color: $text-primary;
+
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        border-color: $gold;
+
+        background: rgba($gold, .06);
+        color: $gold;
+      }
+    }
+
+    &.is-active a {
+      border-color: $gold;
+
+      background: $gold;
+      color: $dark;
+    }
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// Tablet
+// -----------------------------------------------------------------------------
+
+@media (max-width: 1199.98px) {
+  .view-all-acts {
+
+    .views-exposed-form {
+      .form--inline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .form-actions {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .view-content {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// Mobile
+// -----------------------------------------------------------------------------
+
+@media (max-width: 575.98px) {
+  .view-all-acts {
+
+    .view-header {
+      margin-bottom: 24px;
+
+      text-align: left;
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .view-filters {
+      margin-bottom: 30px;
+      padding: 20px;
+    }
+
+    .views-exposed-form {
+
+      .form--inline {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .form-actions {
+        grid-column: auto;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        width: 100%;
+      }
+
+      .form-submit {
+        width: 100%;
+      }
+    }
+
+    .view-content {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .pager {
+      margin-top: 35px;
+    }
+  }
+}

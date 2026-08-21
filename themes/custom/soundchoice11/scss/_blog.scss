@@ -472,3 +472,95 @@
     }
   }
 }
+
+
+
+// -----------------------------------------------------------------------------
+// Tables
+// -----------------------------------------------------------------------------
+
+.landing-content__body,
+.blog-content__body {
+
+  .table-responsive {
+    margin: 2rem 0;
+
+    overflow-x: auto;
+  }
+
+  .table {
+    width: 100%;
+    margin: 0;
+
+    // Override Bootstrap table variables.
+    --bs-table-color: #{$text-secondary};
+    --bs-table-bg: transparent;
+    --bs-table-border-color: #{rgba($gold, .18)};
+    --bs-table-striped-color: #{$text-secondary};
+    --bs-table-striped-bg: #{rgba($light, .02)};
+    --bs-table-hover-color: #{$text-primary};
+    --bs-table-hover-bg: #{rgba($gold, .04)};
+
+    color: $text-secondary;
+
+    border-color: rgba($gold, .18);
+
+    th,
+    td {
+      padding: 16px 18px;
+
+      border-color: rgba($gold, .18);
+
+      vertical-align: top;
+      text-align: left;
+
+      line-height: 1.5;
+    }
+
+    thead {
+      th {
+        color: $gold;
+
+        font-size: .85rem;
+        font-weight: 700;
+
+        text-transform: uppercase;
+        letter-spacing: .05em;
+
+        border-bottom-color: rgba($gold, .4);
+      }
+    }
+
+    tbody {
+      tr {
+        transition: background .2s ease;
+
+        &:hover {
+          background: rgba($gold, .035);
+        }
+      }
+
+      td:first-child {
+        color: $text-primary;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .landing-content__body,
+  .blog-content__body {
+
+    .table {
+      min-width: 700px;
+
+      th,
+      td {
+        padding: 13px 14px;
+
+        font-size: .9rem;
+      }
+    }
+  }
+}

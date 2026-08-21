@@ -267,6 +267,33 @@
 
     .field--name-field-body {
       color: $text-secondary;
+
+      .embedded-entity,
+      drupal-media {
+        display: block;
+        margin: 2rem 0;
+
+        img,
+        video,
+        iframe {
+          display: block;
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      figure {
+        margin: 2rem 0;
+
+        figcaption {
+          margin-top: .65rem;
+
+          color: $text-secondary;
+
+          font-size: .85rem;
+          line-height: 1.5;
+        }
+      }
     }
   }
 
@@ -672,6 +699,130 @@
 
     &__footer {
       padding: 16px 18px;
+    }
+  }
+}
+
+
+
+
+@media (max-width: 767.98px) {
+
+  // ---------------------------------------------------------------------------
+  // Featured attributes in hero
+  // ---------------------------------------------------------------------------
+
+  .artist-hero__attributes {
+
+    .field__items {
+      display: block;
+    }
+
+    .field__item {
+      display: block;
+      width: 100%;
+      margin-bottom: 12px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::after {
+        display: none !important;
+        content: none !important;
+      }
+
+      .attribute {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        width: 100%;
+
+        text-align: left !important;
+      }
+
+      .attribute i {
+        flex: 0 0 28px;
+
+        width: 28px;
+        margin: 0 12px 0 0 !important;
+
+        font-size: 22px !important;
+        line-height: 1;
+        text-align: center;
+      }
+
+      .attribute__label {
+        flex: 1;
+
+        margin: 0;
+
+        font-size: .85rem;
+        line-height: 1.2;
+        text-align: left !important;
+      }
+    }
+  }
+
+
+  // ---------------------------------------------------------------------------
+  // All attributes row
+  // ---------------------------------------------------------------------------
+
+  .artist__all-attributes {
+    padding: 24px;
+
+    .field__items {
+      display: block;
+    }
+
+    .field__item {
+      display: block;
+      width: 100%;
+      margin-bottom: 14px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::after {
+        display: none !important;
+        content: none !important;
+      }
+
+      .attribute {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        width: 100%;
+
+        text-align: left !important;
+      }
+
+      .attribute i {
+        flex: 0 0 28px;
+
+        width: 28px;
+        margin: 0 12px 0 0 !important;
+
+        font-size: 22px !important;
+        line-height: 1;
+        text-align: center;
+      }
+
+      .attribute__label {
+        flex: 1;
+
+        margin: 0;
+
+        font-size: .85rem;
+        line-height: 1.2;
+        text-align: left !important;
+      }
     }
   }
 }
